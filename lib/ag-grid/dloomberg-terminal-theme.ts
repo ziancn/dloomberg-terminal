@@ -23,7 +23,6 @@ export const dloombergTerminalTheme = themeQuartz
 
         rowBorder: false,
         columnBorder: true,
-        inputFocusBorder: false,
         headerColumnBorder: true,
 
         // inputFocusBorderColor: 'transparent', // 屏蔽聚焦边框颜色改变

@@ -12,7 +12,7 @@ import {
 
 
 export default function Page() {
-  const [period, setPeriod] = useState<"am" | "pm">("am")
+  const [period, setPeriod] = useState<string[]>(["am"])
 
   return (
     <div className="flex h-screen flex-col bg-background">
@@ -25,9 +25,9 @@ export default function Page() {
       {/* Row 4: Short Sell Turnover Grid */}
 
       <div className="flex h-full px-4 py-4 gap-4">
-        <ShortSellTurnoverGrid period={period} />
+        <ShortSellTurnoverGrid period={period[0] as "am" | "pm"} />
         <div className="w-[30%]">
-          <ToggleGroup variant="outline" type="single" value={period} onValueChange={(value) => setPeriod(value as "am" | "pm")} className="gap-0 border">
+          <ToggleGroup variant="outline" value={period} onValueChange={setPeriod} className="gap-0 border">
             <ToggleGroupItem value="am" aria-label="Toggle am" className="border-0 text-muted-foreground">
               AM
             </ToggleGroupItem>

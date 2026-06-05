@@ -12,7 +12,7 @@ const nextConfig: NextConfig = {
     images: {
         unoptimized: true, // GitHub Pages 不支持 Next.js 默认的图片优化，必须关闭
     },
-    trailingSlash: true, // 可选：如果遇到路由刷新 404，可以开启此项
+    trailingSlash: true,
 };
 
 export default nextConfig;
