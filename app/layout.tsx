@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
 import { BackendStatusProvider } from "@/components/backend-status-provider";
+import { TerminalChrome } from "@/terminal-components/terminal-chrome";
 
 const notoSans = Noto_Sans({subsets:['latin'],variable:'--font-sans'});
 
@@ -35,7 +36,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <ThemeProvider>
           <BackendStatusProvider>
-            {children}
+            <TerminalChrome>{children}</TerminalChrome>
           </BackendStatusProvider>
         </ThemeProvider>
       </body>

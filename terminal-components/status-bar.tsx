@@ -27,28 +27,26 @@ export function StatusBar() {
   const backendStatus = useBackendStatus()
 
   return (
-    <>
-      <div className="flex items-center justify-between px-4 py-2 bg-neutral-800">
-        {/* Left: Server Status */}
-        <div className="flex items-center gap-4">
-          <div>
-            <StatusIndicator status={backendStatus.fastapi} label="FastAPI" />
-          </div>
-          <div>
-            <StatusIndicator status={backendStatus.blpapi} label="BLPAPI" />
-          </div>
+    <div className="flex items-center justify-between px-4 py-2 bg-neutral-800">
+      {/* Left: Server Status */}
+      <div className="flex items-center gap-4">
+        <div>
+          <StatusIndicator status={backendStatus.fastapi} label="FastAPI" />
         </div>
-
-        {/* Quick links */}
-        <div className="flex items-center gap-4">
-          <a className="text-muted-foreground hover:text-foreground transition-colors" href="https://github.com/ziancn/dloomberg-service" target="_blank">
-            <SiGithub className="size-4" />
-          </a>
-          <a className="text-muted-foreground hover:text-foreground transition-colors" href="#">
-            <Settings className="size-4" />
-          </a>
+        <div>
+          <StatusIndicator status={backendStatus.blpapi} label="BLPAPI" />
         </div>
       </div>
-    </>
+
+      {/* Quick links */}
+      <div className="flex items-center gap-4">
+        <a className="text-muted-foreground hover:text-foreground transition-colors" href="https://github.com/ziancn/dloomberg-terminal" target="_blank">
+          <SiGithub className="size-4" />
+        </a>
+        <a className="text-muted-foreground hover:text-foreground transition-colors" href="#">
+          <Settings className="size-4" />
+        </a>
+      </div>
+    </div>
   )
 }

@@ -39,9 +39,11 @@ export function SearchCommand() {
             >
                 <Terminal className="h-4 w-4" />
                 <span className="text-muted">Search</span>
-                <Kbd className="hidden md:flex bg-muted/90 rounded">
-                    Ctrl+K
-                </Kbd>
+                <div className="hidden md:flex gap-1">
+                    <Kbd className="bg-muted/90 rounded">Ctrl</Kbd>
+                    <Kbd className="bg-muted/90 rounded">K</Kbd>
+                </div>
+                
             </Button>
 
             <CommandDialog open={open} onOpenChange={setOpen}>

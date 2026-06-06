@@ -36,9 +36,10 @@ const modules = [
 
 interface ShortSellTurnoverGridProps {
   period: "am" | "pm"
+  reloadTrigger?: number
 }
 
-export function ShortSellTurnoverGrid({ period }: ShortSellTurnoverGridProps) {
+export function ShortSellTurnoverGrid({ period, reloadTrigger = 0 }: ShortSellTurnoverGridProps) {
   const [rowData, setRowData] = useState<ShortSellRow[]>()
   const [allData, setAllData] = useState<Record<"am" | "pm", ShortSellRow[]>>({ am: [], pm: [] })
   const [isLoading, setIsLoading] = useState(true)
@@ -49,13 +50,10 @@ export function ShortSellTurnoverGrid({ period }: ShortSellTurnoverGridProps) {
   }, [])
 
   useEffect(() => {
+    setIsLoading(true)
     fetch("http://localhost:8000/hkex/short-sell-turnover")
       .then((res) => res.json())
       .then((data) => {
-        // data.data[0] = Mainboard by AM
-        // data.data[1] = GEM by AM
-        // data.data[2] = Mainboard by PM
-        // data.data[3] = GEM by PM
         const amRows = data.data[0]?.parsed?.rows || []
         const pmRows = data.data[2]?.parsed?.rows || []
         setAllData({ am: amRows, pm: pmRows })
@@ -67,7 +65,7 @@ export function ShortSellTurnoverGrid({ period }: ShortSellTurnoverGridProps) {
         setRowData([])
         setIsLoading(false)
       })
-  }, [])
+  }, [reloadTrigger])
 
   useEffect(() => {
     setRowData(allData[period])
@@ -122,7 +120,7 @@ export function ShortSellTurnoverGrid({ period }: ShortSellTurnoverGridProps) {
 
   return (
     <AgGridProvider modules={modules}>
-      <div className="flex-1">
+      <div className="h-full min-h-160">
         <AgGridReact<ShortSellRow>
           className="size-full"
           containerStyle={{ height: "100%", width: "100%" }}
