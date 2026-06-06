@@ -46,6 +46,7 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 
   --color-bloomberg-primary: var(--bloomberg-primary);
+  --color-bloomberg-primary-muted: var(--bloomberg-primary-muted);
 }
 
 :root {
@@ -82,6 +83,7 @@
   --sidebar-ring: oklch(0.556 0 0);
 
   --bloomberg-primary: oklch(78.50% 0.165 65.58);
+  --bloomberg-primary-muted: oklch(37.539% 0.06788 69.778);
 }
 
 

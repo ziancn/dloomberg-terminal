@@ -21,6 +21,8 @@ export const dloombergTerminalTheme = themeQuartz
         // widgetHorizontalSpacing: 16,
         widgetVerticalSpacing: 8,
 
+        inputPaddingStart: 2,
+
         rowBorder: false,
         columnBorder: true,
         headerColumnBorder: true,
@@ -37,7 +39,7 @@ export const dloombergTerminalTheme = themeQuartz
         cellTextColor: "var(--bloomberg-primary)",
         foregroundColor: "var(--muted-foreground)",
         inputBackgroundColor: "var(--bloomberg-primary)",
-        inputDisabledBackgroundColor: "#292929",
+        inputDisabledBackgroundColor: "var(--bloomberg-primary-muted)",
         inputTextColor: "var(--primary-foreground)",
         menuBackgroundColor: "var(--secondary)",
 

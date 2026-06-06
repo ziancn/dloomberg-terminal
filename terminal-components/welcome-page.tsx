@@ -5,8 +5,7 @@ import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/ca
 import { Separator } from "@/components/ui/separator"
 import Link from "next/link"
 import {
-  Rocket,
-  Settings,
+  TrendingUpDown,
   Server,
   Monitor,
   ExternalLink,
@@ -33,19 +32,19 @@ export function WelcomePage() {
   ]
 
   const recentFunctions: ActionItem[] = [
-    { icon: Rocket, title: "HKSS", subtitle: "HKEX short sell turnover daily overview", url: "/hkss" },
+    { icon: TrendingUpDown, title: "HKSS", subtitle: "HKEX Short Selling Turnover Today", url: "/hkss" },
     // { icon: Settings, title: "Customize your Setup", subtitle: "Configure data sources, layouts, and workspace preferences", url: "#" },
   ]
 
   const githubRepos: GithubRepo[] = [
-    { name: "dloomberg-terminal", path: "github.com/ziancn/dloomberg-terminal" },
-    { name: "dloomberg-service", path: "github.com/ziancn/dloomberg-service" },
+    { name: "dloomberg-terminal", path: "github.com/zian/dloomberg-terminal" },
+    { name: "dloomberg-service", path: "github.com/zian/dloomberg-service" },
   ]
 
 
   return (
     <div className="flex h-full flex-col overflow-y-auto">
-      <div className="mx-auto flex justify-center w-full max-w-5xl flex-1 flex-col px-8 py-14">
+      <div className="mx-auto flex justify-center w-full max-w-6xl flex-1 flex-col px-8 py-14">
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-3xl font-semibold tracking-tight">
@@ -120,8 +119,8 @@ export function WelcomePage() {
                 {recentFunctions.map((item, idx) => (
                   <Link key={idx} href={item.url}>
                     <Card className="cursor-pointer transition-colors hover:bg-accent/50">
-                      <CardHeader className="flex-row items-start gap-4 space-y-0">
-                        <span className="flex size-10 shrink-0 items-center justify-center rounded border border-border bg-background">
+                      <CardHeader className="flex gap-4">
+                        <span className="flex size-10 shrink-0 items-center justify-center border border-border bg-background">
                           <item.icon className="size-5" />
                         </span>
                         <div>

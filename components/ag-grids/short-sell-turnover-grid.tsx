@@ -4,7 +4,7 @@ import { useMemo, useEffect, useState, useRef, useCallback } from "react"
 import { AgGridProvider, AgGridReact } from "ag-grid-react"
 import { AllCommunityModule, type ColDef, type GridApi } from "ag-grid-community"
 import { dloombergTerminalTheme } from "@/lib/ag-grid/dloomberg-terminal-theme"
-
+import { Check, Minus } from "lucide-react";
 import { 
   CellSelectionModule, 
   ClipboardModule, 
@@ -13,7 +13,10 @@ import {
   FiltersToolPanelModule,
   ColumnsToolPanelModule,
   StatusBarModule,
+  SetFilterModule,
 } from "ag-grid-enterprise"
+
+
 
 export type ShortSellRow = {
   code: string
@@ -21,6 +24,7 @@ export type ShortSellRow = {
   shares: number
   value: number
   non_hkd: boolean
+  board: string
 }
 
 const modules = [
@@ -32,6 +36,7 @@ const modules = [
   FiltersToolPanelModule,
   ColumnsToolPanelModule,
   StatusBarModule,
+  SetFilterModule,
 ]
 
 interface ShortSellTurnoverGridProps {
@@ -54,8 +59,10 @@ export function ShortSellTurnoverGrid({ period, reloadTrigger = 0 }: ShortSellTu
     fetch("http://localhost:8000/hkex/short-sell-turnover")
       .then((res) => res.json())
       .then((data) => {
-        const amRows = data.data[0]?.parsed?.rows || []
-        const pmRows = data.data[2]?.parsed?.rows || []
+        const arr: Array<{ session: string; rows: ShortSellRow[] }> = Array.isArray(data) ? data : data?.data || []
+        console.log("API response:", data, "→ parsed array:", arr)
+        const amRows: ShortSellRow[] = arr.find((d) => d.session.toLowerCase() === "am")?.rows || []
+        const pmRows: ShortSellRow[] = arr.find((d) => d.session.toLowerCase() === "pm")?.rows || []
         setAllData({ am: amRows, pm: pmRows })
         setRowData(amRows)
         setIsLoading(false)
@@ -73,13 +80,16 @@ export function ShortSellTurnoverGrid({ period, reloadTrigger = 0 }: ShortSellTu
 
   useEffect(() => {
     if (rowData && rowData.length > 0 && gridApiRef.current) {
-      gridApiRef.current.autoSizeColumns(["code"])
+      gridApiRef.current.autoSizeColumns(["code", "non_hkd", "board"])
     }
   }, [rowData])
 
   const columnDefs = useMemo<ColDef<ShortSellRow>[]>(
     () => [
-      { field: "code", filter: true, flex: undefined },
+      {
+        field: "code", 
+        filter: "agSetColumnFilter",
+      },
       { field: "name", filter: true, flex: 1 },
       { 
         field: "shares", 
@@ -97,6 +107,22 @@ export function ShortSellTurnoverGrid({ period, reloadTrigger = 0 }: ShortSellTu
         },
         flex: 1
       },
+      {
+        field: "non_hkd", 
+        filter: true,
+        cellRenderer: (params: any) => {
+          return params.value ? (
+            <div className="flex items-center h-full text-emerald-500">
+              <Check className="size-4" />
+            </div>
+          ) : (
+            <div className="flex items-center h-full text-muted-foreground/40">
+              <Minus className="size-4" />
+            </div>
+          );
+        }
+      },
+      { field: "board", filter: true },
     ],
     [],
   )
