@@ -37,8 +37,8 @@ export function WelcomePage() {
   ]
 
   const githubRepos: GithubRepo[] = [
-    { name: "dloomberg-terminal", path: "github.com/zian/dloomberg-terminal" },
-    { name: "dloomberg-service", path: "github.com/zian/dloomberg-service" },
+    { name: "dloomberg-terminal", path: "github.com/ziancn/dloomberg-terminal" },
+    { name: "dloomberg-service", path: "github.com/ziancn/dloomberg-service" },
   ]
 
 
