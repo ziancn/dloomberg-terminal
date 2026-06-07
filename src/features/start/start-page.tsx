@@ -12,7 +12,6 @@ import {
 } from "@/components/ui/card"
 
 import {
-  House,
   Power,
   TrendingUpDown,
   Server,
@@ -41,9 +40,8 @@ export function StartPage() {
   ]
 
   const recentFunctions: ActionItem[] = [
-    { icon: House, title: "HOME", subtitle: "Landing home page", url: "/" },
+    { icon: Power, title: "START", subtitle: "Get started with Dloomberg Terminal", url: "/" },
     { icon: TrendingUpDown, title: "HKSS", subtitle: "HKEX short selling turnover today", url: "/hkss" },
-    { icon: Power, title: "START", subtitle: "Get started with Dloomberg Terminal", url: "/start" },
   ]
 
   const githubRepos: GithubRepo[] = [
