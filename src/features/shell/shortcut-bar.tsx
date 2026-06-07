@@ -16,9 +16,8 @@ import {
 // ── Shortcut Buttons ────────────────────────────────────────
 
 const frequentButtons: { label: string; href: string }[] = [
-  { label: "HOME", href: "/" },
+  { label: "START", href: "/" },
   { label: "HKSS", href: "/hkss" },
-  { label: "START", href: "/start" },
 ]
 
 
