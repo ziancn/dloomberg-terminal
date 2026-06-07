@@ -18,6 +18,7 @@ import {
 const frequentButtons: { label: string; href: string }[] = [
   { label: "HOME", href: "/" },
   { label: "HKSS", href: "/hkss" },
+  { label: "START", href: "/start" },
 ]
 
 
@@ -35,6 +36,7 @@ export function ShortcutBar() {
             key={item.label}
             variant="default"
             size="xs"
+            className="font-mono"
             onClick={() => router.push(item.href)}
           >
             {item.label}
@@ -56,6 +58,7 @@ export function ShortcutBar() {
           <DropdownMenuContent align="start">
             {frequentButtons.map((item) => (
               <DropdownMenuItem
+                className="font-mono"
                 key={item.label}
                 onClick={() => router.push(item.href)}
               >

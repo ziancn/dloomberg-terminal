@@ -36,7 +36,7 @@ export function HkssPage() {
           </div>
           
         </div>
-        <div className="flex-1 min-h-0 w-full">
+        <div className="flex-1">
           <ShortSellTurnoverGrid period={period} reloadTrigger={reloadKey} />
         </div>
       </div>

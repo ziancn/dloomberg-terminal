@@ -5,6 +5,9 @@ import { AgGridProvider, AgGridReact } from "ag-grid-react"
 import { AllCommunityModule, type ColDef, type FirstDataRenderedEvent } from "ag-grid-community"
 import { dloombergTerminalTheme } from "@/lib/ag-grid/dloomberg-terminal-theme"
 import { Check, Minus } from "lucide-react"
+import { useShortSellData, type Period } from "@/hooks/use-short-sell-data"
+import type { ShortSellRow } from "@/lib/api"
+export type { ShortSellRow }
 
 import {
   CellSelectionModule,
@@ -16,8 +19,6 @@ import {
   StatusBarModule,
   SetFilterModule,
 } from "ag-grid-enterprise"
-import { useShortSellData, type Period } from "@/hooks/use-short-sell-data"
-import type { ShortSellRow } from "@/lib/api"
 
 const modules = [
   AllCommunityModule,
@@ -31,7 +32,6 @@ const modules = [
   SetFilterModule,
 ]
 
-export type { ShortSellRow }
 
 interface ShortSellTurnoverGridProps {
   period: Period
@@ -115,7 +115,7 @@ export function ShortSellTurnoverGrid({ period, reloadTrigger = 0 }: ShortSellTu
 
   return (
     <AgGridProvider modules={modules}>
-      <div className="h-full min-h-160">
+      <div className="h-full min-h-160 dloomberg-terminal-grid">
         <AgGridReact<ShortSellRow>
           className="size-full"
           containerStyle={{ height: "100%", width: "100%" }}

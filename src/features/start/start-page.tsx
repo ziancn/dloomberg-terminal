@@ -12,6 +12,8 @@ import {
 } from "@/components/ui/card"
 
 import {
+  House,
+  Power,
   TrendingUpDown,
   Server,
   Monitor,
@@ -32,15 +34,16 @@ interface GithubRepo {
   path: string
 }
 
-export function WelcomePage() {
+export function StartPage() {
   const startActions: ActionItem[] = [
     { icon: Server, title: "Local Backend Service", subtitle: "Clone and run FastAPI server locally", url: "https://github.com/zian/dloomberg-service" },
     { icon: Monitor, title: "Bloomberg Terminal", subtitle: "Launch to access BLPAPI", url: "#" },
   ]
 
   const recentFunctions: ActionItem[] = [
-    { icon: TrendingUpDown, title: "HKSS", subtitle: "HKEX Short Selling Turnover Today", url: "/hkss" },
-    // { icon: Settings, title: "Customize your Setup", subtitle: "Configure data sources, layouts, and workspace preferences", url: "#" },
+    { icon: House, title: "HOME", subtitle: "Landing home page", url: "/" },
+    { icon: TrendingUpDown, title: "HKSS", subtitle: "HKEX short selling turnover today", url: "/hkss" },
+    { icon: Power, title: "START", subtitle: "Get started with Dloomberg Terminal", url: "/start" },
   ]
 
   const githubRepos: GithubRepo[] = [
@@ -122,7 +125,7 @@ export function WelcomePage() {
             <div className="md:col-span-7">
               <h2 className="mb-4 text-xl font-medium">Recent Functions</h2>
 
-              <div className="space-y-4">
+              <div className="flex flex-col gap-4">
                 {recentFunctions.map((item, idx) => (
                   <Link key={idx} href={item.url}>
                     <Card className="cursor-pointer transition-colors hover:bg-accent/50">

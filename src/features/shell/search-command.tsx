@@ -52,11 +52,11 @@ export function SearchCommand() {
                         <CommandEmpty>No results found.</CommandEmpty>
                         <CommandGroup heading="Suggestions">
                             <CommandItem className="gap-2">
-                                <span>HOME</span>
+                                <span className="font-mono">HOME</span>
                                 <span className="text-muted-foreground">Home page</span>
                             </CommandItem>
                             <CommandItem className="gap-2">
-                                <span>HKSS</span>
+                                <span className="font-mono">HKSS</span>
                                 <span className="text-muted-foreground">HKEX short sell turnover today</span>
                             </CommandItem>
                         </CommandGroup>
