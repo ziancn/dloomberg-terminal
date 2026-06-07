@@ -10,6 +10,7 @@ export function SettingsPage() {
   return (
     <div className="size-full flex justify-center px-4 py-3">
       <div className="size-full max-w-6xl flex flex-col">
+        
         <h1 className="text-3xl font-medium mb-4">Settings</h1>
 
         <div className="flex-1 flex overflow-hidden bg-background">
