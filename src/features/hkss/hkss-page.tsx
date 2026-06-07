@@ -19,7 +19,6 @@ export function HkssPage() {
           <Button
             size="xs"
             variant="default"
-            className="bg-green-500 hover:bg-green-500/70"
             onClick={handleReload}
           >
             <RefreshCcw />
