@@ -1,6 +1,6 @@
 "use client"
 
-import { WelcomePage } from "@/terminal-components/welcome-page"
+import { WelcomePage } from "@/features/home/welcome-page"
 
 export default function Page() {
   return (

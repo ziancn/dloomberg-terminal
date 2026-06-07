@@ -1,6 +1,6 @@
 "use client"
 
-import { HkssPage } from "@/terminal-components/hkss-page"
+import { HkssPage } from "@/features/hkss/hkss-page"
 
 export default function Page() {
   return (

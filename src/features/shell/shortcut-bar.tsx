@@ -3,7 +3,8 @@
 import { useRouter } from "next/navigation"
 import { ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { SearchCommand } from "@/terminal-components/ui/search-command"
+import { SearchCommand } from "@/features/shell/search-command"
+
 import {
   DropdownMenu,
   DropdownMenuTrigger,

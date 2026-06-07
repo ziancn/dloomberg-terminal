@@ -1,7 +1,7 @@
 "use client"
 
-import { StatusBar } from "@/terminal-components/status-bar"
-import { ShortcutBar } from "@/terminal-components/shortcut-bar"
+import { StatusBar } from "@/features/shell/status-bar"
+import { ShortcutBar } from "@/features/shell/shortcut-bar"
 
 export function TerminalChrome({ children }: { children: React.ReactNode }) {
   return (
