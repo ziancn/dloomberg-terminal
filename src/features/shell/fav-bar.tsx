@@ -16,7 +16,7 @@ import {
 
 // ── Shortcut Bar (Second Row) ───────────────────────────────
 
-export function ShortcutBar() {
+export function FavBar() {
   const router = useRouter()
 
   return (
