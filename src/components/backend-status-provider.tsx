@@ -2,12 +2,11 @@
 
 import { ReactNode, useEffect, useState, useCallback, useRef } from 'react';
 import { BackendStatusContext, BackendStatus } from '@/hooks/use-backend-status';
+import { apiGet, API } from '@/lib/api';
 
-const BACKEND_URL = 'http://localhost:8000';
-const TIMEOUT = 2000
+const STATUS_TIMEOUT = 2000;
 const POLL_INTERVAL = 2000; // 2 seconds
 const MAX_RETRIES = 2;
-const RETRY_DELAY = 1000; // 1 second
 
 export function BackendStatusProvider({ children }: { children: ReactNode }) {
   const [status, setStatus] = useState<BackendStatus>({
@@ -26,23 +25,17 @@ export function BackendStatusProvider({ children }: { children: ReactNode }) {
     isCheckingRef.current = true;
 
     try {
-      // Check backend status - FastAPI must be online to respond
-      const response = await fetch(`${BACKEND_URL}/status`, {
-        signal: AbortSignal.timeout(TIMEOUT),
+      const data = await apiGet<{ blpapi: boolean }>(API.status, {
+        timeout: STATUS_TIMEOUT,
       });
 
-      if (response.ok) {
-        const data = await response.json();
-        setStatus((prev) => ({
-          ...prev,
-          fastapi: 'ok',
-          blpapi: data.blpapi === true ? 'ok' : 'offline',
-          isRetrying: false,
-          retryCount: 0,
-        }));
-      } else {
-        throw new Error(`HTTP ${response.status}`);
-      }
+      setStatus((prev) => ({
+        ...prev,
+        fastapi: 'ok',
+        blpapi: data.blpapi === true ? 'ok' : 'offline',
+        isRetrying: false,
+        retryCount: 0,
+      }));
     } catch (error) {
       console.error('Backend status check failed:', error);
 

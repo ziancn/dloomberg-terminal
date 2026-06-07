@@ -1,21 +1,23 @@
 "use client"
 
-import { useMemo, useEffect, useState, useCallback } from "react"
+import { useMemo, useCallback } from "react"
 import { AgGridProvider, AgGridReact } from "ag-grid-react"
 import { AllCommunityModule, type ColDef, type FirstDataRenderedEvent } from "ag-grid-community"
 import { dloombergTerminalTheme } from "@/lib/ag-grid/dloomberg-terminal-theme"
-import { Check, Minus } from "lucide-react";
+import { Check, Minus } from "lucide-react"
 
-import { 
-  CellSelectionModule, 
-  ClipboardModule, 
-  ContextMenuModule, 
-  SideBarModule, 
+import {
+  CellSelectionModule,
+  ClipboardModule,
+  ContextMenuModule,
+  SideBarModule,
   FiltersToolPanelModule,
   ColumnsToolPanelModule,
   StatusBarModule,
   SetFilterModule,
 } from "ag-grid-enterprise"
+import { useShortSellData, type Period } from "@/hooks/use-short-sell-data"
+import type { ShortSellRow } from "@/lib/api"
 
 const modules = [
   AllCommunityModule,
@@ -29,51 +31,15 @@ const modules = [
   SetFilterModule,
 ]
 
-
-export type ShortSellRow = {
-  code: string
-  name: string
-  shares: number
-  value: number
-  non_hkd: boolean
-  board: string
-}
-
+export type { ShortSellRow }
 
 interface ShortSellTurnoverGridProps {
-  period: "am" | "pm"
+  period: Period
   reloadTrigger?: number
 }
 
-
 export function ShortSellTurnoverGrid({ period, reloadTrigger = 0 }: ShortSellTurnoverGridProps) {
-  const [rowData, setRowData] = useState<ShortSellRow[]>()
-  const [allData, setAllData] = useState<Record<"am" | "pm", ShortSellRow[]>>({ am: [], pm: [] })
-  const [isLoading, setIsLoading] = useState(true)
-
-  useEffect(() => {
-    setIsLoading(true)
-    fetch("http://localhost:8000/hkex/short-sell-turnover")
-      .then((res) => res.json())
-      .then((data) => {
-        const arr: Array<{ session: string; rows: ShortSellRow[] }> = Array.isArray(data) ? data : data?.data || []
-        console.log("API response:", data, "→ parsed array:", arr)
-        const amRows: ShortSellRow[] = arr.find((d) => d.session.toLowerCase() === "am")?.rows || []
-        const pmRows: ShortSellRow[] = arr.find((d) => d.session.toLowerCase() === "pm")?.rows || []
-        setAllData({ am: amRows, pm: pmRows })
-        setRowData(amRows)
-        setIsLoading(false)
-      })
-      .catch((error) => {
-        console.error("Failed to fetch short sell data:", error)
-        setRowData([])
-        setIsLoading(false)
-      })
-  }, [reloadTrigger])
-
-  useEffect(() => {
-    setRowData(allData[period])
-  }, [period, allData])
+  const { rowData, isLoading } = useShortSellData(period, reloadTrigger)
 
   const onFirstDataRendered = useCallback((params: FirstDataRenderedEvent) => {
     params.api.autoSizeColumns(["code", "non_hkd", "board"])
@@ -87,33 +53,33 @@ export function ShortSellTurnoverGrid({ period, reloadTrigger = 0 }: ShortSellTu
   const columnDefs = useMemo<ColDef<ShortSellRow>[]>(
     () => [
       {
-        field: "code", 
+        field: "code",
         filter: "agSetColumnFilter",
-        flex: 1
+        flex: 1,
       },
       {
-        field: "name", 
-        filter: true, 
-        flex: 1 
+        field: "name",
+        filter: true,
+        flex: 1,
       },
-      { 
-        field: "shares", 
+      {
+        field: "shares",
         filter: "agNumberColumnFilter",
         valueFormatter: (params) => {
           return params.value?.toLocaleString("en-US") || ""
         },
-        flex: 1
+        flex: 1,
       },
-      { 
-        field: "value", 
+      {
+        field: "value",
         filter: "agNumberColumnFilter",
         valueFormatter: (params) => {
           return params.value?.toLocaleString("en-US") || ""
         },
-        flex: 1
+        flex: 1,
       },
       {
-        field: "non_hkd", 
+        field: "non_hkd",
         filter: true,
         flex: 1,
         cellRenderer: (params: any) => {
@@ -125,29 +91,27 @@ export function ShortSellTurnoverGrid({ period, reloadTrigger = 0 }: ShortSellTu
             <div className="flex items-center h-full text-muted-foreground/40">
               <Minus className="size-4" />
             </div>
-          );
-        }
+          )
+        },
       },
-      { 
-        field: "board", 
-        filter: true, 
-        flex: 1 
+      {
+        field: "board",
+        filter: true,
+        flex: 1,
       },
     ],
     [],
   )
 
-  const statusBar = useMemo(() => { 
+  const statusBar = useMemo(() => {
     return {
-          statusPanels: [
-              { statusPanel: 'agTotalAndFilteredRowCountComponent' },
-              { statusPanel: 'agTotalRowCountComponent' },
-              { statusPanel: 'agFilteredRowCountComponent' },
-              // { statusPanel: 'agSelectedRowCountComponent' },
-              // { statusPanel: 'agAggregationComponent' }
-          ]
-      };
-  }, []);
+      statusPanels: [
+        { statusPanel: "agTotalAndFilteredRowCountComponent" },
+        { statusPanel: "agTotalRowCountComponent" },
+        { statusPanel: "agFilteredRowCountComponent" },
+      ],
+    }
+  }, [])
 
   return (
     <AgGridProvider modules={modules}>
