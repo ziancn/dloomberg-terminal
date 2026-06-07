@@ -1,8 +1,8 @@
 "use client"
 
-import { useMemo, useEffect, useState, useRef, useCallback } from "react"
+import { useMemo, useEffect, useState, useCallback } from "react"
 import { AgGridProvider, AgGridReact } from "ag-grid-react"
-import { AllCommunityModule, type ColDef, type GridApi } from "ag-grid-community"
+import { AllCommunityModule, type ColDef, type FirstDataRenderedEvent } from "ag-grid-community"
 import { dloombergTerminalTheme } from "@/lib/ag-grid/dloomberg-terminal-theme"
 import { Check, Minus } from "lucide-react";
 import { 
@@ -16,17 +16,6 @@ import {
   SetFilterModule,
 } from "ag-grid-enterprise"
 
-
-
-export type ShortSellRow = {
-  code: string
-  name: string
-  shares: number
-  value: number
-  non_hkd: boolean
-  board: string
-}
-
 const modules = [
   AllCommunityModule,
   CellSelectionModule,
@@ -39,20 +28,28 @@ const modules = [
   SetFilterModule,
 ]
 
+
+export type ShortSellRow = {
+  code: string
+  name: string
+  shares: number
+  value: number
+  non_hkd: boolean
+  board: string
+}
+
+
 interface ShortSellTurnoverGridProps {
   period: "am" | "pm"
   reloadTrigger?: number
 }
 
+
+
 export function ShortSellTurnoverGrid({ period, reloadTrigger = 0 }: ShortSellTurnoverGridProps) {
   const [rowData, setRowData] = useState<ShortSellRow[]>()
   const [allData, setAllData] = useState<Record<"am" | "pm", ShortSellRow[]>>({ am: [], pm: [] })
   const [isLoading, setIsLoading] = useState(true)
-  const gridApiRef = useRef<GridApi | null>(null)
-
-  const onGridReady = useCallback((params: { api: GridApi }) => {
-    gridApiRef.current = params.api
-  }, [])
 
   useEffect(() => {
     setIsLoading(true)
@@ -78,19 +75,27 @@ export function ShortSellTurnoverGrid({ period, reloadTrigger = 0 }: ShortSellTu
     setRowData(allData[period])
   }, [period, allData])
 
-  useEffect(() => {
-    if (rowData && rowData.length > 0 && gridApiRef.current) {
-      gridApiRef.current.autoSizeColumns(["code", "non_hkd", "board"])
-    }
-  }, [rowData])
+  const onFirstDataRendered = useCallback((params: FirstDataRenderedEvent) => {
+    params.api.autoSizeColumns(["code", "non_hkd", "board"])
+  }, [])
+
+  const defaultColDef = useMemo<ColDef<ShortSellRow>>(
+    () => ({ sortable: true, resizable: true, floatingFilter: true }),
+    [],
+  )
 
   const columnDefs = useMemo<ColDef<ShortSellRow>[]>(
     () => [
       {
         field: "code", 
         filter: "agSetColumnFilter",
+        flex: 1
       },
-      { field: "name", filter: true, flex: 1 },
+      {
+        field: "name", 
+        filter: true, 
+        flex: 1 
+      },
       { 
         field: "shares", 
         filter: "agNumberColumnFilter",
@@ -110,6 +115,7 @@ export function ShortSellTurnoverGrid({ period, reloadTrigger = 0 }: ShortSellTu
       {
         field: "non_hkd", 
         filter: true,
+        flex: 1,
         cellRenderer: (params: any) => {
           return params.value ? (
             <div className="flex items-center h-full text-emerald-500">
@@ -122,13 +128,12 @@ export function ShortSellTurnoverGrid({ period, reloadTrigger = 0 }: ShortSellTu
           );
         }
       },
-      { field: "board", filter: true },
+      { 
+        field: "board", 
+        filter: true, 
+        flex: 1 
+      },
     ],
-    [],
-  )
-
-  const defaultColDef = useMemo<ColDef<ShortSellRow>>(
-    () => ({ sortable: true, resizable: true, floatingFilter: true }),
     [],
   )
 
@@ -156,10 +161,10 @@ export function ShortSellTurnoverGrid({ period, reloadTrigger = 0 }: ShortSellTu
           columnDefs={columnDefs}
           defaultColDef={defaultColDef}
           statusBar={statusBar}
+          onFirstDataRendered={onFirstDataRendered}
           sideBar={{
             toolPanels: ["columns", "filters"],
           }}
-          onGridReady={onGridReady}
           cellSelection={{
             handle: { mode: "range" },
           }}

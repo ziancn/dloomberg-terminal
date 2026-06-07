@@ -4,7 +4,7 @@ import { ReactNode, useEffect, useState, useCallback, useRef } from 'react';
 import { BackendStatusContext, BackendStatus } from '@/hooks/use-backend-status';
 
 const BACKEND_URL = 'http://localhost:8000';
-const TIMEOUT = 3000 // 3 seconds
+const TIMEOUT = 2000
 const POLL_INTERVAL = 2000; // 2 seconds
 const MAX_RETRIES = 2;
 const RETRY_DELAY = 1000; // 1 second
@@ -18,8 +18,13 @@ export function BackendStatusProvider({ children }: { children: ReactNode }) {
     maxRetries: MAX_RETRIES,
   });
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const isCheckingRef = useRef(false);
 
   const checkBackendStatus = useCallback(async () => {
+    // Prevent overlapping requests
+    if (isCheckingRef.current) return;
+    isCheckingRef.current = true;
+
     try {
       // Check backend status - FastAPI must be online to respond
       const response = await fetch(`${BACKEND_URL}/status`, {
@@ -53,6 +58,8 @@ export function BackendStatusProvider({ children }: { children: ReactNode }) {
           retryCount: newRetryCount,
         };
       });
+    } finally {
+      isCheckingRef.current = false;
     }
   }, []);
 
