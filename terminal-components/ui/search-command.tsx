@@ -42,8 +42,7 @@ export function SearchCommand() {
                 <div className="hidden md:flex gap-1">
                     <Kbd className="bg-muted/90 rounded">Ctrl</Kbd>
                     <Kbd className="bg-muted/90 rounded">K</Kbd>
-                </div>
-                
+                </div>        
             </Button>
 
             <CommandDialog open={open} onOpenChange={setOpen}>
@@ -52,8 +51,14 @@ export function SearchCommand() {
                     <CommandList>
                         <CommandEmpty>No results found.</CommandEmpty>
                         <CommandGroup heading="Suggestions">
-                            <CommandItem>Calendar</CommandItem>
-                            <CommandItem>Search Emoji</CommandItem>
+                            <CommandItem className="gap-2">
+                                <span>HOME</span>
+                                <span className="text-muted-foreground">Home page</span>
+                            </CommandItem>
+                            <CommandItem className="gap-2">
+                                <span>HKSS</span>
+                                <span className="text-muted-foreground">HKEX short sell turnover today</span>
+                            </CommandItem>
                         </CommandGroup>
                         <CommandSeparator />
                         <CommandGroup heading="Settings">

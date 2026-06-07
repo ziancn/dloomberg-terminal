@@ -97,9 +97,9 @@ export function WelcomePage() {
                     href={`https://${project.path}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex h-auto flex-col items-start rounded-md px-3 py-2 text-left transition-colors hover:bg-accent hover:text-accent-foreground"
+                    className="inline-flex h-auto flex-col items-start px-3 py-2 text-left transition-colors hover:bg-accent hover:text-accent-foreground"
                   >
-                    <span className="inline-flex items-center gap-1.5 text-sm font-medium">
+                    <span className="inline-flex items-center gap-1.5 text-sm font-medium text-blue-400">
                       {project.name}
                       <ExternalLink className="size-3 text-muted-foreground" />
                     </span>

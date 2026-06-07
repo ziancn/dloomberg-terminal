@@ -4,6 +4,7 @@ import { useState, useCallback } from "react"
 import { ShortSellTurnoverGrid } from "@/components/ag-grids/short-sell-turnover-grid"
 import { Button } from "@/components/ui/button"
 import { ButtonGroup } from "@/components/ui/button-group"
+import { RefreshCcw } from "lucide-react"
 
 
 export function HkssPage() {
@@ -12,20 +13,27 @@ export function HkssPage() {
   const handleReload = useCallback(() => setReloadKey((k) => k + 1), [])
 
   return (
-    <div className="flex flex-col items-center h-full w-full px-4 py-3">
-      <div className="h-full w-full max-w-7xl flex flex-col gap-3">
+    <div className="flex flex-col items-center size-full px-4 py-3 overflow-auto">
+      <div className="size-full max-w-7xl flex flex-col gap-3">
         <div className="flex justify-between">
-          <Button size="xs" variant="default" onClick={handleReload}>Reload</Button>
+          <Button
+            size="xs"
+            variant="default"
+            className="bg-green-500 hover:bg-green-500/70"
+            onClick={handleReload}
+          >
+            <RefreshCcw />
+            Reload
+          </Button>
           <div className="flex items-center gap-2">
-            <span className="text-sm">As of</span>
-              <ButtonGroup>
-                <Button size="xs" variant={period === "am" ? "default" : "outline"} onClick={() => setPeriod("am")}>
-                  Morning Close
-                </Button>
-                <Button size="xs" variant={period === "pm" ? "default" : "outline"} onClick={() => setPeriod("pm")}>
-                  Day Close
-                </Button>
-              </ButtonGroup>
+            <ButtonGroup>
+              <Button size="xs" variant={period === "am" ? "default" : "outline"} onClick={() => setPeriod("am")}>
+                Morning Close
+              </Button>
+              <Button size="xs" variant={period === "pm" ? "default" : "outline"} onClick={() => setPeriod("pm")}>
+                Day Close
+              </Button>
+            </ButtonGroup>
           </div>
           
         </div>
