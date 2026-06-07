@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation"
 import { ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { SearchCommand } from "@/features/shell/search-command"
+import { appRegistry } from "@/config/app-registry"
 
 import {
   DropdownMenu,
@@ -11,14 +12,6 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu"
-
-
-// ── Shortcut Buttons ────────────────────────────────────────
-
-const frequentButtons: { label: string; href: string }[] = [
-  { label: "START", href: "/" },
-  { label: "HKSS", href: "/hkss" },
-]
 
 
 // ── Shortcut Bar (Second Row) ───────────────────────────────
@@ -30,15 +23,15 @@ export function ShortcutBar() {
     <div className="flex items-center justify-between gap-2 px-4 py-2.5 bg-neutral-800">
       {/* Frequently Used Button Group — visible on md+ */}
       <div className="hidden md:flex items-center gap-2">
-        {frequentButtons.map((item) => (
+        {appRegistry.map((feature) => (
           <Button
-            key={item.label}
+            key={feature.id}
             variant="default"
             size="xs"
             className="font-mono"
-            onClick={() => router.push(item.href)}
+            onClick={() => router.push(feature.path)}
           >
-            {item.label}
+            {feature.label}
           </Button>
         ))}
       </div>
@@ -55,13 +48,13 @@ export function ShortcutBar() {
             )}
           />
           <DropdownMenuContent align="start">
-            {frequentButtons.map((item) => (
+            {appRegistry.map((feature) => (
               <DropdownMenuItem
                 className="font-mono"
-                key={item.label}
-                onClick={() => router.push(item.href)}
+                key={feature.id}
+                onClick={() => router.push(feature.path)}
               >
-                {item.label}
+                {feature.label}
               </DropdownMenuItem>
             ))}
           </DropdownMenuContent>
