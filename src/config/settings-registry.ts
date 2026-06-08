@@ -1,3 +1,4 @@
+import { ComponentType, lazy } from "react"
 import { LucideIcon } from "lucide-react"
 
 export type SettingsSection = {
@@ -5,42 +6,29 @@ export type SettingsSection = {
   label: string
   description?: string
   icon?: LucideIcon
+  /** Lazy-loaded section content component */
+  Component: ComponentType
 }
 
 /**
  * Settings sections registry
- * Add new setting sections here
+ *
+ * Add a new section:
+ * 1. Create a component file under src/features/settings/sections/
+ * 2. Add an entry here with lazy(() => import("..."))
  */
 export const settingsRegistry: SettingsSection[] = [
   {
-    id: "profile",
-    label: "Profile",
-    description: "Manage your profile information",
+    id: "favorites",
+    label: "Favorites",
+    description: "Personalise your favorites bar",
+    Component: lazy(() => import("@/features/settings/sections/favorites-section")),
   },
   {
-    id: "account",
-    label: "Account",
-    description: "Account security and preferences",
-  },
-  {
-    id: "billing",
-    label: "Billing",
-    description: "Billing and subscription",
-  },
-  {
-    id: "appearance",
-    label: "Appearance",
-    description: "Theme and display settings",
-  },
-  {
-    id: "notifications",
-    label: "Notifications",
-    description: "Notification preferences",
-  },
-  {
-    id: "display",
-    label: "Display",
-    description: "Display settings",
+    id: "general",
+    label: "General",
+    description: "Generic settings",
+    Component: lazy(() => import("@/features/settings/sections/general-section")),
   },
 ]
 

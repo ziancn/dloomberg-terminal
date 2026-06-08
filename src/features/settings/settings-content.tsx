@@ -1,27 +1,30 @@
 "use client"
 
-import { ReactNode } from "react"
+import { Suspense } from "react"
 import { getSettingsById } from "@/config/settings-registry"
 
 interface SettingsContentProps {
   activeId: string
-  children: Record<string, ReactNode>
 }
 
-export function SettingsContent({ activeId, children }: SettingsContentProps) {
+export function SettingsContent({ activeId }: SettingsContentProps) {
   const section = getSettingsById(activeId)
 
   if (!section) return null
 
+  const { label, description, Component } = section
+
   return (
     <div className="flex-1 px-6 py-4 overflow-auto">
       <div className="mb-6">
-        <h2 className="text-xl font-semibold mb-1">{section.label}</h2>
-        {section.description && (
-          <p className="text-sm text-muted-foreground">{section.description}</p>
+        <h2 className="text-xl font-semibold mb-1">{label}</h2>
+        {description && (
+          <p className="text-sm text-muted-foreground">{description}</p>
         )}
       </div>
-      <div>{children[activeId]}</div>
+      <Suspense fallback={<div className="text-muted-foreground">Loading...</div>}>
+        <Component />
+      </Suspense>
     </div>
   )
 }

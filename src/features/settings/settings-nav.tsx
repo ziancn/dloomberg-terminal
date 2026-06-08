@@ -1,8 +1,8 @@
 "use client"
 
+import { Button } from "@/components/ui/button"
 import { settingsRegistry, type SettingsSection } from "@/config/settings-registry"
 import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
 
 interface SettingsNavProps {
   activeId: string
@@ -11,21 +11,23 @@ interface SettingsNavProps {
 
 export function SettingsNav({ activeId, onSelect }: SettingsNavProps) {
   return (
-    <nav className="w-52 bg-muted/30 py-4">
-      <div className="space-y-1 px-2">
+    <nav className="w-52 py-4 border-r"> 
+      <div className="flex flex-col">
         {settingsRegistry.map((section) => (
-          <button
+          <Button
             key={section.id}
             onClick={() => onSelect(section.id)}
+            variant={activeId === section.id ? "secondary" : "ghost"}
+            size="lg"
             className={cn(
-              "w-full text-left px-3 py-2 rounded-sm text-sm font-medium transition-colors",
+              "w-full justify-start text-sm border-0",
               activeId === section.id
-                ? "bg-neutral-700 text-foreground"
-                : "text-muted-foreground hover:bg-neutral-800 hover:text-foreground"
+                ? ""
+                : "text-muted-foreground"
             )}
           >
             {section.label}
-          </button>
+          </Button>
         ))}
       </div>
     </nav>
