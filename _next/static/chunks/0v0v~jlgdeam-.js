@@ -140299,12 +140299,12 @@ function HkssPage() {
     const [reloadKey, setReloadKey] = (0, __TURBOPACK__imported__module__51268__["useState"])(0);
     const handleReload = (0, __TURBOPACK__imported__module__51268__["useCallback"])(()=>setReloadKey((k)=>k + 1), []);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__1["jsx"])("div", {
-        className: "flex flex-col items-center size-full px-4 py-3 overflow-auto",
+        className: "flex flex-col items-center size-full px-4 overflow-auto",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__1["jsxs"])("div", {
-            className: "size-full max-w-7xl flex flex-col gap-3",
+            className: "size-full max-w-7xl flex flex-col",
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__1["jsxs"])("div", {
-                    className: "flex justify-between",
+                    className: "flex py-3 justify-between",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__1["jsxs"])(__TURBOPACK__imported__module__19455__["Button"], {
                             size: "xs",
