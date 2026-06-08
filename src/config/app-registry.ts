@@ -23,6 +23,12 @@ export const appRegistry: Feature[] = [
     description: "HKEX short sell turnover today",
   },
   {
+    id: "sfcpr",
+    label: "SFCPR",
+    path: "/sfcpr",
+    description: "HKSFC public register of licensed entities",
+  },
+  {
     id: "set",
     label: "SET",
     path: "/settings",

@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/card"
 
 import {
-  Power,
+  Contact,
   TrendingUpDown,
   Server,
   Monitor,
@@ -40,8 +40,8 @@ export function StartPage() {
   ]
 
   const recentFunctions: ActionItem[] = [
-    { icon: Power, title: "START", subtitle: "Get started with Dloomberg Terminal", url: "/" },
     { icon: TrendingUpDown, title: "HKSS", subtitle: "HKEX short selling turnover today", url: "/hkss" },
+    { icon: Contact, title: "SFCPR", subtitle: "HKSFC public register of licensed entities", url: "/sfcpr" },
   ]
 
   const githubRepos: GithubRepo[] = [

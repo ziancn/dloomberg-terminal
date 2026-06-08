@@ -7,7 +7,6 @@ import { dloombergTerminalTheme } from "@/lib/ag-grid/dloomberg-terminal-theme"
 import { Check, Minus } from "lucide-react"
 import { useShortSellData, type Period } from "@/hooks/use-short-sell-data"
 import type { ShortSellRow } from "@/lib/api"
-export type { ShortSellRow }
 
 import {
   CellSelectionModule,
