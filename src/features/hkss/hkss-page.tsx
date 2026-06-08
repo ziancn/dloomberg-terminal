@@ -13,17 +13,15 @@ export function HkssPage() {
   const handleReload = useCallback(() => setReloadKey((k) => k + 1), [])
 
   return (
-    <div className="flex flex-col items-center size-full px-4 py-3 overflow-auto">
-      <div className="size-full max-w-7xl flex flex-col gap-3">
-        <div className="flex justify-between">
-          <Button
-            size="xs"
-            variant="default"
-            onClick={handleReload}
-          >
+    <div className="flex flex-col items-center size-full px-4 overflow-auto">
+      <div className="size-full max-w-7xl flex flex-col">
+        <div className="flex py-3 justify-between">
+          {/* Reload Button */}
+          <Button size="xs" variant="default" onClick={handleReload}>
             <RefreshCcw />
             Reload
           </Button>
+          {/* Switch for data scope */}
           <div className="flex items-center gap-2">
             <ButtonGroup>
               <Button size="xs" variant={period === "am" ? "default" : "outline"} onClick={() => setPeriod("am")}>
@@ -34,7 +32,6 @@ export function HkssPage() {
               </Button>
             </ButtonGroup>
           </div>
-          
         </div>
         <div className="flex-1">
           <ShortSellTurnoverGrid period={period} reloadTrigger={reloadKey} />
