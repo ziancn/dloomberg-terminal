@@ -553,6 +553,9 @@ function useCompositeRootContext(optional = false) {
     return context;
 }
 __turbopack_context__.s([
+    "CompositeRootContext",
+    0,
+    CompositeRootContext,
     "useCompositeRootContext",
     0,
     useCompositeRootContext

@@ -296,6 +296,100 @@ function assign(target, ...searchParamsList) {
     return target;
 }
 }),
+61238, 8069, 
+((__turbopack_context__) => {
+"use strict";
+
+// MERGED MODULE: [project]/src/lib/api/client.ts [app-client] (ecmascript)
+;
+const BASE_URL = "http://localhost:8000";
+const DEFAULT_TIMEOUT = 8000 // 8 seconds
+;
+class ApiError extends Error {
+    status;
+    body;
+    constructor(message, status, body){
+        super(message), this.status = status, this.body = body;
+        this.name = "ApiError";
+    }
+}
+async function apiGet(path, options = {}) {
+    const { timeout = DEFAULT_TIMEOUT, signal: externalSignal } = options;
+    let signal = externalSignal;
+    if (timeout > 0) {
+        // Merge external signal with internal timeout signal
+        const timeoutController = new AbortController();
+        const timeoutId = setTimeout(()=>timeoutController.abort(), timeout);
+        if (externalSignal) {
+            // If external signal fires, also abort the timeout
+            externalSignal.addEventListener("abort", ()=>{
+                clearTimeout(timeoutId);
+                timeoutController.abort();
+            }, {
+                once: true
+            });
+        }
+        signal = timeoutController.signal;
+    }
+    const response = await fetch(`${BASE_URL}${path}`, {
+        signal
+    });
+    if (!response.ok) {
+        let body = null;
+        try {
+            body = await response.json();
+        } catch  {
+        // ignore parse errors
+        }
+        throw new ApiError(`API ${response.status}: ${response.statusText}`, response.status, body);
+    }
+    return await response.json();
+}
+__turbopack_context__.s([
+    "apiGet",
+    0,
+    apiGet
+], 61238);
+// MERGED MODULE: [project]/src/lib/api/endpoints.ts [app-client] (ecmascript)
+;
+const API = {
+    shortSellTurnover: "/hkex/short-sell-turnover",
+    status: "/status",
+    sfcSearch: "/sfc/search"
+};
+__turbopack_context__.s([
+    "API",
+    0,
+    API
+], 8069);
+}),
+98144, ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * @license lucide-react v1.16.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ var __TURBOPACK__imported__module__67022__ = __turbopack_context__.i(67022);
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M20 6 9 17l-5-5",
+            key: "1gmf2c"
+        }
+    ]
+];
+const Check = (0, __TURBOPACK__imported__module__67022__["default"])("check", __iconNode);
+;
+__turbopack_context__.s([
+    "default",
+    0,
+    Check
+]);
+}),
 67022, ((__turbopack_context__) => {
 "use strict";
 
@@ -494,99 +588,6 @@ __turbopack_context__.s([
     "Separator",
     0,
     Separator
-]);
-}),
-61238, 8069, 
-((__turbopack_context__) => {
-"use strict";
-
-// MERGED MODULE: [project]/src/lib/api/client.ts [app-client] (ecmascript)
-;
-const BASE_URL = "http://localhost:8000";
-const DEFAULT_TIMEOUT = 8000 // 8 seconds
-;
-class ApiError extends Error {
-    status;
-    body;
-    constructor(message, status, body){
-        super(message), this.status = status, this.body = body;
-        this.name = "ApiError";
-    }
-}
-async function apiGet(path, options = {}) {
-    const { timeout = DEFAULT_TIMEOUT, signal: externalSignal } = options;
-    let signal = externalSignal;
-    if (timeout > 0) {
-        // Merge external signal with internal timeout signal
-        const timeoutController = new AbortController();
-        const timeoutId = setTimeout(()=>timeoutController.abort(), timeout);
-        if (externalSignal) {
-            // If external signal fires, also abort the timeout
-            externalSignal.addEventListener("abort", ()=>{
-                clearTimeout(timeoutId);
-                timeoutController.abort();
-            }, {
-                once: true
-            });
-        }
-        signal = timeoutController.signal;
-    }
-    const response = await fetch(`${BASE_URL}${path}`, {
-        signal
-    });
-    if (!response.ok) {
-        let body = null;
-        try {
-            body = await response.json();
-        } catch  {
-        // ignore parse errors
-        }
-        throw new ApiError(`API ${response.status}: ${response.statusText}`, response.status, body);
-    }
-    return await response.json();
-}
-__turbopack_context__.s([
-    "apiGet",
-    0,
-    apiGet
-], 61238);
-// MERGED MODULE: [project]/src/lib/api/endpoints.ts [app-client] (ecmascript)
-;
-const API = {
-    shortSellTurnover: "/hkex/short-sell-turnover",
-    status: "/status"
-};
-__turbopack_context__.s([
-    "API",
-    0,
-    API
-], 8069);
-}),
-98144, ((__turbopack_context__) => {
-"use strict";
-
-/**
- * @license lucide-react v1.16.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */ var __TURBOPACK__imported__module__67022__ = __turbopack_context__.i(67022);
-;
-const __iconNode = [
-    [
-        "path",
-        {
-            d: "M20 6 9 17l-5-5",
-            key: "1gmf2c"
-        }
-    ]
-];
-const Check = (0, __TURBOPACK__imported__module__67022__["default"])("check", __iconNode);
-;
-__turbopack_context__.s([
-    "default",
-    0,
-    Check
 ]);
 }),
 ]);

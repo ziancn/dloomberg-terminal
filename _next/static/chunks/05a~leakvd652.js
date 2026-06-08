@@ -1,0 +1,95 @@
+(globalThis["TURBOPACK"] || (globalThis["TURBOPACK"] = [])).push([typeof document === "object" ? document.currentScript : undefined,
+15288, ((__turbopack_context__) => {
+"use strict";
+
+var __TURBOPACK__imported__module__8063__ = __turbopack_context__.i(8063);
+var __TURBOPACK__imported__module__75157__ = __turbopack_context__.i(75157);
+;
+;
+function Card({ className, size = "default", ...props }) {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("div", {
+        "data-slot": "card",
+        "data-size": size,
+        className: (0, __TURBOPACK__imported__module__75157__["cn"])("group/card flex flex-col gap-4 overflow-hidden rounded-none bg-card py-4 text-xs/relaxed text-card-foreground ring-1 ring-foreground/10 has-data-[slot=card-footer]:pb-0 has-[>img:first-child]:pt-0 data-[size=sm]:gap-2 data-[size=sm]:py-3 data-[size=sm]:has-data-[slot=card-footer]:pb-0 *:[img:first-child]:rounded-none *:[img:last-child]:rounded-none", className),
+        ...props
+    });
+}
+function CardHeader({ className, ...props }) {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("div", {
+        "data-slot": "card-header",
+        className: (0, __TURBOPACK__imported__module__75157__["cn"])("group/card-header @container/card-header grid auto-rows-min items-start gap-1 rounded-none px-4 group-data-[size=sm]/card:px-3 has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-4 group-data-[size=sm]/card:[.border-b]:pb-3", className),
+        ...props
+    });
+}
+function CardTitle({ className, ...props }) {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("div", {
+        "data-slot": "card-title",
+        className: (0, __TURBOPACK__imported__module__75157__["cn"])("font-heading text-sm font-medium group-data-[size=sm]/card:text-sm", className),
+        ...props
+    });
+}
+function CardDescription({ className, ...props }) {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("div", {
+        "data-slot": "card-description",
+        className: (0, __TURBOPACK__imported__module__75157__["cn"])("text-xs/relaxed text-muted-foreground", className),
+        ...props
+    });
+}
+function CardAction({ className, ...props }) {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("div", {
+        "data-slot": "card-action",
+        className: (0, __TURBOPACK__imported__module__75157__["cn"])("col-start-2 row-span-2 row-start-1 self-start justify-self-end", className),
+        ...props
+    });
+}
+function CardContent({ className, ...props }) {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("div", {
+        "data-slot": "card-content",
+        className: (0, __TURBOPACK__imported__module__75157__["cn"])("px-4 group-data-[size=sm]/card:px-3", className),
+        ...props
+    });
+}
+function CardFooter({ className, ...props }) {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("div", {
+        "data-slot": "card-footer",
+        className: (0, __TURBOPACK__imported__module__75157__["cn"])("flex items-center rounded-none border-t p-4 group-data-[size=sm]/card:p-3", className),
+        ...props
+    });
+}
+;
+__turbopack_context__.s([
+    "Card",
+    0,
+    Card,
+    "CardContent",
+    0,
+    CardContent,
+    "CardDescription",
+    0,
+    CardDescription,
+    "CardHeader",
+    0,
+    CardHeader,
+    "CardTitle",
+    0,
+    CardTitle
+]);
+}),
+50340, ((__turbopack_context__) => {
+"use strict";
+
+var __TURBOPACK__imported__module__8063__ = __turbopack_context__.i(8063);
+var __TURBOPACK__imported__module__4508__ = __turbopack_context__.i(4508);
+"use client";
+;
+;
+function Page() {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])(__TURBOPACK__imported__module__4508__["SfcprPage"], {});
+}
+__turbopack_context__.s([
+    "default",
+    0,
+    Page
+]);
+}),
+]);

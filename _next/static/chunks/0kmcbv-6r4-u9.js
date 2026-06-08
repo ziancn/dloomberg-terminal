@@ -1,4 +1,80 @@
 (globalThis["TURBOPACK"] || (globalThis["TURBOPACK"] = [])).push([typeof document === "object" ? document.currentScript : undefined,
+15288, ((__turbopack_context__) => {
+"use strict";
+
+var __TURBOPACK__imported__module__8063__ = __turbopack_context__.i(8063);
+var __TURBOPACK__imported__module__75157__ = __turbopack_context__.i(75157);
+;
+;
+function Card({ className, size = "default", ...props }) {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("div", {
+        "data-slot": "card",
+        "data-size": size,
+        className: (0, __TURBOPACK__imported__module__75157__["cn"])("group/card flex flex-col gap-4 overflow-hidden rounded-none bg-card py-4 text-xs/relaxed text-card-foreground ring-1 ring-foreground/10 has-data-[slot=card-footer]:pb-0 has-[>img:first-child]:pt-0 data-[size=sm]:gap-2 data-[size=sm]:py-3 data-[size=sm]:has-data-[slot=card-footer]:pb-0 *:[img:first-child]:rounded-none *:[img:last-child]:rounded-none", className),
+        ...props
+    });
+}
+function CardHeader({ className, ...props }) {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("div", {
+        "data-slot": "card-header",
+        className: (0, __TURBOPACK__imported__module__75157__["cn"])("group/card-header @container/card-header grid auto-rows-min items-start gap-1 rounded-none px-4 group-data-[size=sm]/card:px-3 has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-4 group-data-[size=sm]/card:[.border-b]:pb-3", className),
+        ...props
+    });
+}
+function CardTitle({ className, ...props }) {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("div", {
+        "data-slot": "card-title",
+        className: (0, __TURBOPACK__imported__module__75157__["cn"])("font-heading text-sm font-medium group-data-[size=sm]/card:text-sm", className),
+        ...props
+    });
+}
+function CardDescription({ className, ...props }) {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("div", {
+        "data-slot": "card-description",
+        className: (0, __TURBOPACK__imported__module__75157__["cn"])("text-xs/relaxed text-muted-foreground", className),
+        ...props
+    });
+}
+function CardAction({ className, ...props }) {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("div", {
+        "data-slot": "card-action",
+        className: (0, __TURBOPACK__imported__module__75157__["cn"])("col-start-2 row-span-2 row-start-1 self-start justify-self-end", className),
+        ...props
+    });
+}
+function CardContent({ className, ...props }) {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("div", {
+        "data-slot": "card-content",
+        className: (0, __TURBOPACK__imported__module__75157__["cn"])("px-4 group-data-[size=sm]/card:px-3", className),
+        ...props
+    });
+}
+function CardFooter({ className, ...props }) {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("div", {
+        "data-slot": "card-footer",
+        className: (0, __TURBOPACK__imported__module__75157__["cn"])("flex items-center rounded-none border-t p-4 group-data-[size=sm]/card:p-3", className),
+        ...props
+    });
+}
+;
+__turbopack_context__.s([
+    "Card",
+    0,
+    Card,
+    "CardContent",
+    0,
+    CardContent,
+    "CardDescription",
+    0,
+    CardDescription,
+    "CardHeader",
+    0,
+    CardHeader,
+    "CardTitle",
+    0,
+    CardTitle
+]);
+}),
 72436, ((__turbopack_context__) => {
 "use strict";
 
@@ -521,66 +597,10 @@ var __TURBOPACK__imported__module__8063__ = __turbopack_context__.i(8063);
 var __TURBOPACK__imported__module__70096__ = __turbopack_context__.i(70096);
 var __TURBOPACK__imported__module__19455__ = __turbopack_context__.i(19455);
 var __TURBOPACK__imported__module__72436__ = __turbopack_context__.i(72436);
-// MERGED MODULE: [project]/src/components/ui/card.tsx [app-client] (ecmascript)
+var __TURBOPACK__imported__module__15288__ = __turbopack_context__.i(15288);
+// MERGED MODULE: [project]/node_modules/.pnpm/lucide-react@1.16.0_react@19.2.4/node_modules/lucide-react/dist/esm/icons/contact.mjs [app-client] (ecmascript) <export default as Contact>
 ;
-var __TURBOPACK__imported__module__8063__1 = __TURBOPACK__imported__module__8063__;
-var __TURBOPACK__imported__module__75157__ = __turbopack_context__.i(75157);
-;
-;
-function Card({ className, size = "default", ...props }) {
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__1["jsx"])("div", {
-        "data-slot": "card",
-        "data-size": size,
-        className: (0, __TURBOPACK__imported__module__75157__["cn"])("group/card flex flex-col gap-4 overflow-hidden rounded-none bg-card py-4 text-xs/relaxed text-card-foreground ring-1 ring-foreground/10 has-data-[slot=card-footer]:pb-0 has-[>img:first-child]:pt-0 data-[size=sm]:gap-2 data-[size=sm]:py-3 data-[size=sm]:has-data-[slot=card-footer]:pb-0 *:[img:first-child]:rounded-none *:[img:last-child]:rounded-none", className),
-        ...props
-    });
-}
-function CardHeader({ className, ...props }) {
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__1["jsx"])("div", {
-        "data-slot": "card-header",
-        className: (0, __TURBOPACK__imported__module__75157__["cn"])("group/card-header @container/card-header grid auto-rows-min items-start gap-1 rounded-none px-4 group-data-[size=sm]/card:px-3 has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-4 group-data-[size=sm]/card:[.border-b]:pb-3", className),
-        ...props
-    });
-}
-function CardTitle({ className, ...props }) {
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__1["jsx"])("div", {
-        "data-slot": "card-title",
-        className: (0, __TURBOPACK__imported__module__75157__["cn"])("font-heading text-sm font-medium group-data-[size=sm]/card:text-sm", className),
-        ...props
-    });
-}
-function CardDescription({ className, ...props }) {
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__1["jsx"])("div", {
-        "data-slot": "card-description",
-        className: (0, __TURBOPACK__imported__module__75157__["cn"])("text-xs/relaxed text-muted-foreground", className),
-        ...props
-    });
-}
-function CardAction({ className, ...props }) {
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__1["jsx"])("div", {
-        "data-slot": "card-action",
-        className: (0, __TURBOPACK__imported__module__75157__["cn"])("col-start-2 row-span-2 row-start-1 self-start justify-self-end", className),
-        ...props
-    });
-}
-function CardContent({ className, ...props }) {
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__1["jsx"])("div", {
-        "data-slot": "card-content",
-        className: (0, __TURBOPACK__imported__module__75157__["cn"])("px-4 group-data-[size=sm]/card:px-3", className),
-        ...props
-    });
-}
-function CardFooter({ className, ...props }) {
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__1["jsx"])("div", {
-        "data-slot": "card-footer",
-        className: (0, __TURBOPACK__imported__module__75157__["cn"])("flex items-center rounded-none border-t p-4 group-data-[size=sm]/card:p-3", className),
-        ...props
-    });
-}
-;
-// MERGED MODULE: [project]/node_modules/.pnpm/lucide-react@1.16.0_react@19.2.4/node_modules/lucide-react/dist/esm/icons/power.mjs [app-client] (ecmascript) <export default as Power>
-;
-// MERGED MODULE: [project]/node_modules/.pnpm/lucide-react@1.16.0_react@19.2.4/node_modules/lucide-react/dist/esm/icons/power.mjs [app-client] (ecmascript)
+// MERGED MODULE: [project]/node_modules/.pnpm/lucide-react@1.16.0_react@19.2.4/node_modules/lucide-react/dist/esm/icons/contact.mjs [app-client] (ecmascript)
 ;
 /**
  * @license lucide-react v1.16.0 - ISC
@@ -593,19 +613,46 @@ const __iconNode = [
     [
         "path",
         {
-            d: "M12 2v10",
-            key: "mnfbl"
+            d: "M16 2v2",
+            key: "scm5qe"
         }
     ],
     [
         "path",
         {
-            d: "M18.4 6.6a9 9 0 1 1-12.77.04",
-            key: "obofu9"
+            d: "M7 22v-2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2",
+            key: "1waht3"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M8 2v2",
+            key: "pbkmx"
+        }
+    ],
+    [
+        "circle",
+        {
+            cx: "12",
+            cy: "11",
+            r: "3",
+            key: "itu57m"
+        }
+    ],
+    [
+        "rect",
+        {
+            x: "3",
+            y: "4",
+            width: "18",
+            height: "18",
+            rx: "2",
+            key: "12vinp"
         }
     ]
 ];
-const Power = (0, __TURBOPACK__imported__module__67022__["default"])("power", __iconNode);
+const Contact = (0, __TURBOPACK__imported__module__67022__["default"])("contact", __iconNode);
 ;
 // MERGED MODULE: [project]/node_modules/.pnpm/lucide-react@1.16.0_react@19.2.4/node_modules/lucide-react/dist/esm/icons/trending-up-down.mjs [app-client] (ecmascript) <export default as TrendingUpDown>
 ;
@@ -795,16 +842,16 @@ function StartPage() {
     ];
     const recentFunctions = [
         {
-            icon: Power,
-            title: "START",
-            subtitle: "Get started with Dloomberg Terminal",
-            url: "/"
-        },
-        {
             icon: TrendingUpDown,
             title: "HKSS",
             subtitle: "HKEX short selling turnover today",
             url: "/hkss"
+        },
+        {
+            icon: Contact,
+            title: "SFCPR",
+            subtitle: "HKSFC public register of licensed entities",
+            url: "/sfcpr"
         }
     ];
     const githubRepos = [
@@ -925,9 +972,9 @@ function StartPage() {
                                         className: "flex flex-col gap-4",
                                         children: recentFunctions.map((item, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])(__TURBOPACK__imported__module__70096__["default"], {
                                                 href: item.url,
-                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])(Card, {
+                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])(__TURBOPACK__imported__module__15288__["Card"], {
                                                     className: "cursor-pointer transition-colors hover:bg-accent/50",
-                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsxs"])(CardHeader, {
+                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsxs"])(__TURBOPACK__imported__module__15288__["CardHeader"], {
                                                         className: "flex gap-4",
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("span", {
@@ -938,11 +985,11 @@ function StartPage() {
                                                             }),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsxs"])("div", {
                                                                 children: [
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])(CardTitle, {
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])(__TURBOPACK__imported__module__15288__["CardTitle"], {
                                                                         className: "text-sm font-semibold",
                                                                         children: item.title
                                                                     }),
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])(CardDescription, {
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])(__TURBOPACK__imported__module__15288__["CardDescription"], {
                                                                         className: "mt-1",
                                                                         children: item.subtitle
                                                                     })
@@ -1044,7 +1091,7 @@ __turbopack_context__.s([
     StartPage
 ], 75721);
 }),
-63135, ((__turbopack_context__) => {
+52683, ((__turbopack_context__) => {
 "use strict";
 
 var __TURBOPACK__imported__module__8063__ = __turbopack_context__.i(8063);
