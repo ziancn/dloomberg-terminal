@@ -52,14 +52,14 @@ export function SfcprPage() {
                   >
                     <label
                       htmlFor="status-active"
-                      className="flex items-center gap-2 text-xs cursor-pointer rounded-md border px-3 py-2 has-[[data-state=checked]]:border-primary/50 has-[[data-state=checked]]:bg-primary/5 transition-colors"
+                      className="flex items-center gap-2 text-xs cursor-pointer rounded-md border px-3 py-2 has-data-[state=checked]:border-primary/50 has-data-[state=checked]:bg-primary/5 transition-colors"
                     >
                       <RadioGroupItem value="active" id="status-active" />
                       Active
                     </label>
                     <label
                       htmlFor="status-active-inactive"
-                      className="flex items-center gap-2 text-xs cursor-pointer rounded-md border px-3 py-2 has-[[data-state=checked]]:border-primary/50 has-[[data-state=checked]]:bg-primary/5 transition-colors"
+                      className="flex items-center gap-2 text-xs cursor-pointer rounded-md border px-3 py-2 has-data-[state=checked]:border-primary/50 has-data-[state=checked]:bg-primary/5 transition-colors"
                     >
                       <RadioGroupItem value="all" id="status-active-inactive" />
                       Active and inactive
@@ -81,21 +81,21 @@ export function SfcprPage() {
                   >
                     <label
                       htmlFor="search-individual"
-                      className="flex items-center gap-2 text-xs cursor-pointer rounded-md border px-3 py-2 has-[[data-state=checked]]:border-primary/50 has-[[data-state=checked]]:bg-primary/5 transition-colors"
+                      className="flex items-center gap-2 text-xs cursor-pointer rounded-md border px-3 py-2 has-data-[state=checked]:border-primary/50 has-data-[state=checked]:bg-primary/5 transition-colors"
                     >
                       <RadioGroupItem value="individual" id="search-individual" />
                       Individual name
                     </label>
                     <label
                       htmlFor="search-corporation"
-                      className="flex items-center gap-2 text-xs cursor-pointer rounded-md border px-3 py-2 has-[[data-state=checked]]:border-primary/50 has-[[data-state=checked]]:bg-primary/5 transition-colors"
+                      className="flex items-center gap-2 text-xs cursor-pointer rounded-md border px-3 py-2 has-data-[state=checked]:border-primary/50 has-data-[state=checked]:bg-primary/5 transition-colors"
                     >
                       <RadioGroupItem value="corporation" id="search-corporation" />
                       Corporation name
                     </label>
                     <label
                       htmlFor="search-entity-number"
-                      className="flex items-center gap-2 text-xs cursor-pointer rounded-md border px-3 py-2 has-[[data-state=checked]]:border-primary/50 has-[[data-state=checked]]:bg-primary/5 transition-colors"
+                      className="flex items-center gap-2 text-xs cursor-pointer rounded-md border px-3 py-2 has-data-[state=checked]:border-primary/50 has-data-[state=checked]:bg-primary/5 transition-colors"
                     >
                       <RadioGroupItem value="ceref" id="search-entity-number" />
                       Central entity number
