@@ -38,6 +38,7 @@ export interface SfcRaDetail {
   actType: number
   actDesc: string
   cactDesc: string
+  hasLicence: boolean
   parentType: number | null
 }
 

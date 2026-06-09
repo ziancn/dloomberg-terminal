@@ -1,24 +1,33 @@
 "use client"
 
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 
 import {
-  Card, 
-  CardDescription, 
-  CardHeader, 
+  Card,
+  CardDescription,
+  CardHeader,
   CardTitle
 } from "@/components/ui/card"
+
+import { Alert, AlertDescription } from "@/components/ui/alert"
 
 import {
   Contact,
   TrendingUpDown,
-  Server,
-  Monitor,
   ExternalLink,
+  AlertTriangle,
   type LucideIcon,
 } from "lucide-react"
+
+interface StartStep {
+  step: number
+  title: string
+  description: string
+  url?: string
+  note?: string
+  optional?: boolean
+}
 
 interface ActionItem {
   icon: LucideIcon
@@ -34,9 +43,28 @@ interface GithubRepo {
 }
 
 export function StartPage() {
-  const startActions: ActionItem[] = [
-    { icon: Server, title: "Local Backend Service", subtitle: "Clone and run FastAPI server locally", url: "https://github.com/zian/dloomberg-service" },
-    { icon: Monitor, title: "Bloomberg Terminal", subtitle: "Launch to access BLPAPI", url: "#" },
+  const startSteps: StartStep[] = [
+    {
+      step: 1,
+      title: "Clone Dloomberg Service & Run Locally",
+      description:
+        "This is a pure static frontend. Backend logic currently requires local execution. Cloud hosting may be considered if funding permits in the future.",
+      url: "https://github.com/ziancn/dloomberg-service",
+    },
+    {
+      step: 2,
+      title: "Launch Bloomberg Terminal",
+      description:
+        "To use Bloomberg BLPAPI as a data source, open your Bloomberg Terminal. Dloomberg Service will automatically fetch data via BLPAPI.",
+      note: "Reminder: This consumes your BLPAPI quota. Exhausting it will affect data retrieval for Excel Bloomberg functions.",
+      optional: true,
+    },
+    {
+      step: 3,
+      title: "Check Connection Status",
+      description:
+        "If both Step 1 and Step 2 are running properly, the status indicator in the top bar will show a green dot. Otherwise, it will be red.",
+    },
   ]
 
   const recentFunctions: ActionItem[] = [
@@ -48,7 +76,6 @@ export function StartPage() {
     { name: "dloomberg-terminal", path: "github.com/ziancn/dloomberg-terminal" },
     { name: "dloomberg-service", path: "github.com/ziancn/dloomberg-service" },
   ]
-
 
   return (
     <div className="flex h-full flex-col overflow-y-auto">
@@ -66,33 +93,82 @@ export function StartPage() {
         {/* Main Grid */}
         <main className="flex-1">
           <div className="grid grid-cols-1 gap-10 md:grid-cols-12">
-
-            {/* Left Column: Start & Recent */}
+            {/* Left Column: Start */}
             <div className="md:col-span-5">
-              <h2 className="mb-4 text-xl font-medium">Start</h2>
+              <h2 className="mb-4 text-xl font-medium">Get Started</h2>
 
               <div className="flex flex-col">
-                {startActions.map((action, idx) => (
-                  <Button
-                    key={idx}
-                    variant="ghost"
-                    className="h-auto justify-start px-3 py-2 text-left"
+                {startSteps.map((step) => (
+                  <div
+                    key={step.step}
+                    className="flex items-start gap-3 py-2.5"
                   >
-                    <action.icon className="mr-3 size-5" />
-                    <div className="flex-1">
-                      <div className="text-sm font-medium">{action.title}</div>
-                      <div className="mt-0.5 text-xs text-muted-foreground">{action.subtitle}</div>
+                    {/* Step number */}
+                    <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-muted text-[11px] font-semibold text-muted-foreground">
+                      {step.step}
+                    </span>
+
+                    {/* Content */}
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-1.5">
+                        <span className="text-sm font-medium">
+                          {step.title}
+                          {step.optional && (
+                            <span className="ml-1 text-xs font-normal text-muted-foreground">
+                              {" "}(Optional)
+                            </span>
+                          )}
+                        </span>
+                        {step.url && (
+                          <a
+                            href={step.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="ml-auto shrink-0 text-muted-foreground transition-colors hover:text-foreground"
+                            title="Open in new tab"
+                          >
+                            <ExternalLink className="size-4" />
+                          </a>
+                        )}
+                      </div>
+                      <p className="mt-0.5 text-xs text-muted-foreground leading-relaxed">
+                        {step.description}
+                      </p>
+                      {step.note && (
+                        <Alert variant="default" className="mt-2 bg-bloomberg-primary/10">
+                          <AlertTriangle />
+                          <AlertDescription className="text-wrap">{step.note}</AlertDescription>
+                        </Alert>
+                      )}
                     </div>
-                    {action.shortcut && (
-                      <kbd className="hidden rounded border border-border bg-secondary px-1.5 py-0.5 font-mono text-xs text-muted-foreground sm:inline">
-                        {action.shortcut}
-                      </kbd>
-                    )}
-                  </Button>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right Column: Recent Functions & GitHub Repos */}
+            <div className="md:col-span-7">
+              <h2 className="mb-4 text-xl font-medium">Recent Functions</h2>
+
+              <div className="flex flex-col gap-4">
+                {recentFunctions.map((item, idx) => (
+                  <Link key={idx} href={item.url}>
+                    <Card className="cursor-pointer transition-colors hover:bg-accent/50">
+                      <CardHeader className="flex gap-4">
+                        <span className="flex size-10 shrink-0 items-center justify-center border border-border bg-background">
+                          <item.icon className="size-5" />
+                        </span>
+                        <div>
+                          <CardTitle className="text-sm font-semibold">{item.title}</CardTitle>
+                          <CardDescription className="mt-1">{item.subtitle}</CardDescription>
+                        </div>
+                      </CardHeader>
+                    </Card>
+                  </Link>
                 ))}
               </div>
 
-              <Separator className="my-6" />
+              <Separator className="my-8" />
 
               {/* GitHub Repos */}
               <h2 className="mb-2 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
@@ -118,77 +194,8 @@ export function StartPage() {
                 ))}
               </div>
             </div>
-
-            {/* Right Column: Recent Functions */}
-            <div className="md:col-span-7">
-              <h2 className="mb-4 text-xl font-medium">Recent Functions</h2>
-
-              <div className="flex flex-col gap-4">
-                {recentFunctions.map((item, idx) => (
-                  <Link key={idx} href={item.url}>
-                    <Card className="cursor-pointer transition-colors hover:bg-accent/50">
-                      <CardHeader className="flex gap-4">
-                        <span className="flex size-10 shrink-0 items-center justify-center border border-border bg-background">
-                          <item.icon className="size-5" />
-                        </span>
-                        <div>
-                          <CardTitle className="text-sm font-semibold">{item.title}</CardTitle>
-                          <CardDescription className="mt-1">{item.subtitle}</CardDescription>
-                        </div>
-                      </CardHeader>
-                    </Card>
-                  </Link>
-                ))}
-              </div>
-
-              {/* Help & Product Links */}
-              <Separator className="my-8" />
-              <div className="grid grid-cols-2 gap-4 text-xs text-muted-foreground">
-                <div>
-                  <div className="mb-2 font-semibold text-foreground">Dummy Links</div>
-                  <ul className="space-y-1.5">
-                    <li>
-                      <a href="#" className="text-primary underline-offset-4 hover:underline">
-                        Link
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="text-primary underline-offset-4 hover:underline">
-                        Link
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="text-primary underline-offset-4 hover:underline">
-                        Link
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <div className="mb-2 font-semibold text-foreground">For future use</div>
-                  <ul className="space-y-1.5">
-                    <li>
-                      <a href="#" className="text-primary underline-offset-4 hover:underline">
-                        Link
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="text-primary underline-offset-4 hover:underline">
-                        Link
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="text-primary underline-offset-4 hover:underline">
-                        Link
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
           </div>
         </main>
-
       </div>
     </div>
   )

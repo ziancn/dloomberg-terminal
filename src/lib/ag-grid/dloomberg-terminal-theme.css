@@ -6,3 +6,8 @@
 .dloomberg-terminal-grid .ag-status-name-value {
   padding: 6px 0px ; /*y x*/
 }
+
+.dloomberg-terminal-grid .ag-tooltip {
+  transition: none !important;
+  transition-duration: 0s !important;
+}

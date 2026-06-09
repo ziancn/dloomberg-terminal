@@ -6,6 +6,7 @@ import {
   AllCommunityModule,
   type ColDef,
   type FirstDataRenderedEvent,
+  TooltipModule,
 } from "ag-grid-community"
 import {
   CellSelectionModule,
@@ -15,13 +16,15 @@ import {
   FiltersToolPanelModule,
   ColumnsToolPanelModule,
   StatusBarModule,
+  SetFilterModule,
 } from "ag-grid-enterprise"
 import { dloombergTerminalTheme } from "@/lib/ag-grid/dloomberg-terminal-theme"
 import type { SfcLicenseeItem } from "@/lib/api"
-import { Check, Minus } from "lucide-react"
+import { Check, Minus, ExternalLink } from "lucide-react"
 
 const modules = [
   AllCommunityModule,
+  TooltipModule,
   CellSelectionModule,
   ClipboardModule,
   ContextMenuModule,
@@ -29,7 +32,21 @@ const modules = [
   FiltersToolPanelModule,
   ColumnsToolPanelModule,
   StatusBarModule,
+  SetFilterModule,
 ]
+
+const SFC_LICENCE_TYPES: Record<number, string> = {
+  1: "Dealing in securities",
+  2: "Dealing in futures contracts",
+  3: "Leveraged foreign exchange trading",
+  4: "Advising on securities",
+  5: "Advising on futures contracts",
+  6: "Advising on corporate finance",
+  7: "Providing automated trading services",
+  8: "Securities margin financing",
+  9: "Asset management",
+  10: "Providing credit rating services",
+}
 
 interface SfcprGridProps {
   rowData: SfcLicenseeItem[]
@@ -38,21 +55,28 @@ interface SfcprGridProps {
 
 export function SfcprGrid({ rowData, isLoading }: SfcprGridProps) {
   const defaultColDef = useMemo<ColDef<SfcLicenseeItem>>(
-    () => ({ sortable: true, resizable: true, floatingFilter: true }),
+    () => ({
+      sortable: true,
+      resizable: true,
+      floatingFilter: true,
+    }),
     [],
   )
 
   const columnDefs = useMemo<ColDef<SfcLicenseeItem>[]>(() => {
     const typeCol = (actType: number): ColDef<SfcLicenseeItem> => ({
       headerName: `T${actType}`,
+      headerTooltip: SFC_LICENCE_TYPES[actType],
+      sortable: false,
       flex: 0.5,
       minWidth: 40,
       cellRenderer: (params: any) => {
         if (!params.data) return null
-        const has = params.data.raDetails.some(
-          (ra: { actType: number }) => ra.actType === actType,
+        const detail = params.data.raDetails.find(
+          (ra: { actType: number; hasLicence: boolean }) => ra.actType === actType,
         )
-        return has ? (
+        const hasLicence = detail?.hasLicence ?? false
+        return hasLicence ? (
           <div className="flex items-center justify-center h-full text-emerald-500">
             <Check className="size-3.5" />
           </div>
@@ -102,7 +126,11 @@ export function SfcprGrid({ rowData, isLoading }: SfcprGridProps) {
       {
         field: "hasActiveLicence",
         headerName: "Active Licence",
-        filter: true,
+        filter: "agSetColumnFilter",
+        filterParams: {
+          valueFormatter: (params: { value: string }) =>
+            params.value === "Y" ? "Active" : "Inactive",
+        },
         flex: 1,
         minWidth: 100,
         cellRenderer: (params: any) => {
@@ -126,14 +154,16 @@ export function SfcprGrid({ rowData, isLoading }: SfcprGridProps) {
           if (!params.data?.ceref) return null
           const type = params.data.isCorp ? "corp" : "indi"
           return (
-            <a
-              href={`https://apps.sfc.hk/publicregWeb/${type}/${params.data.ceref}/details`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 underline hover:text-blue-800"
-            >
-              Details
-            </a>
+            <div className="flex items-center justify-center h-full">
+              <a
+                href={`https://apps.sfc.hk/publicregWeb/${type}/${params.data.ceref}/details`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <ExternalLink className="size-4" />
+              </a>
+            </div>
           )
         },
       },
@@ -175,6 +205,8 @@ export function SfcprGrid({ rowData, isLoading }: SfcprGridProps) {
           loading={isLoading}
           columnDefs={columnDefs}
           defaultColDef={defaultColDef}
+          tooltipShowDelay={0}
+          // tooltipHideDelay={3000}
           statusBar={statusBar}
           onFirstDataRendered={onFirstDataRendered}
           sideBar={{

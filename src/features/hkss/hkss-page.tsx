@@ -14,7 +14,7 @@ export function HkssPage() {
 
   return (
     <div className="flex flex-col items-center size-full px-4 overflow-auto">
-      <div className="size-full max-w-7xl flex flex-col">
+      <div className="size-full max-w-350 flex flex-col">
         <div className="flex py-4 justify-between">
           {/* Reload Button */}
           <Button size="sm" variant="default" onClick={handleReload}>

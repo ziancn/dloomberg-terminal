@@ -8,6 +8,18 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { useSfcData } from "@/hooks/use-sfc-data"
 import { SfcprGrid } from "./sfcpr-grid"
 
+function RadioOption({ value, id, label }: { value: string; id: string; label: string }) {
+  return (
+    <label
+      htmlFor={id}
+      className="flex items-center gap-2 text-xs cursor-pointer rounded-md border px-3 py-2 has-data-[state=checked]:border-primary/50 has-data-[state=checked]:bg-primary/5 transition-colors"
+    >
+      <RadioGroupItem value={value} id={id} />
+      {label}
+    </label>
+  )
+}
+
 export function SfcprPage() {
   const { rowData, totalCount, isLoading, search } = useSfcData()
 
@@ -41,7 +53,7 @@ export function SfcprPage() {
               {/* Filter options */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 {/* Licence/Registration status */}
-                <div className="space-y-2.5">
+                <div className="space-y-2">
                   <h3 className="text-sm font-medium text-muted-foreground">
                     Licence / Registration Status
                   </h3>
@@ -50,25 +62,13 @@ export function SfcprPage() {
                     onValueChange={(v) => setLicstatus(v as "active" | "all")}
                     className="gap-2"
                   >
-                    <label
-                      htmlFor="status-active"
-                      className="flex items-center gap-2 text-xs cursor-pointer rounded-md border px-3 py-2 has-data-[state=checked]:border-primary/50 has-data-[state=checked]:bg-primary/5 transition-colors"
-                    >
-                      <RadioGroupItem value="active" id="status-active" />
-                      Active
-                    </label>
-                    <label
-                      htmlFor="status-active-inactive"
-                      className="flex items-center gap-2 text-xs cursor-pointer rounded-md border px-3 py-2 has-data-[state=checked]:border-primary/50 has-data-[state=checked]:bg-primary/5 transition-colors"
-                    >
-                      <RadioGroupItem value="all" id="status-active-inactive" />
-                      Active and inactive
-                    </label>
+                    <RadioOption value="active" id="status-active" label="Active" />
+                    <RadioOption value="all" id="status-active-inactive" label="Active and inactive" />
                   </RadioGroup>
                 </div>
 
                 {/* Search by */}
-                <div className="space-y-2.5">
+                <div className="space-y-2">
                   <h3 className="text-sm font-medium text-muted-foreground">
                     Search By
                   </h3>
@@ -79,27 +79,9 @@ export function SfcprPage() {
                     }
                     className="gap-2"
                   >
-                    <label
-                      htmlFor="search-individual"
-                      className="flex items-center gap-2 text-xs cursor-pointer rounded-md border px-3 py-2 has-data-[state=checked]:border-primary/50 has-data-[state=checked]:bg-primary/5 transition-colors"
-                    >
-                      <RadioGroupItem value="individual" id="search-individual" />
-                      Individual name
-                    </label>
-                    <label
-                      htmlFor="search-corporation"
-                      className="flex items-center gap-2 text-xs cursor-pointer rounded-md border px-3 py-2 has-data-[state=checked]:border-primary/50 has-data-[state=checked]:bg-primary/5 transition-colors"
-                    >
-                      <RadioGroupItem value="corporation" id="search-corporation" />
-                      Corporation name
-                    </label>
-                    <label
-                      htmlFor="search-entity-number"
-                      className="flex items-center gap-2 text-xs cursor-pointer rounded-md border px-3 py-2 has-data-[state=checked]:border-primary/50 has-data-[state=checked]:bg-primary/5 transition-colors"
-                    >
-                      <RadioGroupItem value="ceref" id="search-entity-number" />
-                      Central entity number
-                    </label>
+                    <RadioOption value="individual" id="search-individual" label="Individual name" />
+                    <RadioOption value="corporation" id="search-corporation" label="Corporation name" />
+                    <RadioOption value="ceref" id="search-entity-number" label="Central entity number" />
                   </RadioGroup>
                 </div>
               </div>
