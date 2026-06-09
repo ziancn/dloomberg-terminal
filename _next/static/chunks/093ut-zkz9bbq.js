@@ -1,7 +1,10 @@
 (globalThis["TURBOPACK"] || (globalThis["TURBOPACK"] = [])).push([typeof document === "object" ? document.currentScript : undefined,
-15288, ((__turbopack_context__) => {
+15288, 69631, 
+((__turbopack_context__) => {
 "use strict";
 
+// MERGED MODULE: [project]/src/components/ui/card.tsx [app-client] (ecmascript)
+;
 var __TURBOPACK__imported__module__8063__ = __turbopack_context__.i(8063);
 var __TURBOPACK__imported__module__75157__ = __turbopack_context__.i(75157);
 ;
@@ -73,7 +76,48 @@ __turbopack_context__.s([
     "CardTitle",
     0,
     CardTitle
-]);
+], 15288);
+// MERGED MODULE: [project]/node_modules/.pnpm/lucide-react@1.16.0_react@19.2.4/node_modules/lucide-react/dist/esm/icons/external-link.mjs [app-client] (ecmascript) <export default as ExternalLink>
+;
+// MERGED MODULE: [project]/node_modules/.pnpm/lucide-react@1.16.0_react@19.2.4/node_modules/lucide-react/dist/esm/icons/external-link.mjs [app-client] (ecmascript)
+;
+/**
+ * @license lucide-react v1.16.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ var __TURBOPACK__imported__module__67022__ = __turbopack_context__.i(67022);
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M15 3h6v6",
+            key: "1q9fwt"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M10 14 21 3",
+            key: "gplh6r"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6",
+            key: "a6xqqp"
+        }
+    ]
+];
+const ExternalLink = (0, __TURBOPACK__imported__module__67022__["default"])("external-link", __iconNode);
+;
+__turbopack_context__.s([
+    "ExternalLink",
+    0,
+    ExternalLink
+], 69631);
 }),
 72436, ((__turbopack_context__) => {
 "use strict";
@@ -595,9 +639,59 @@ if ((typeof exports.default === 'function' || typeof exports.default === 'object
 ;
 var __TURBOPACK__imported__module__8063__ = __turbopack_context__.i(8063);
 var __TURBOPACK__imported__module__70096__ = __turbopack_context__.i(70096);
-var __TURBOPACK__imported__module__19455__ = __turbopack_context__.i(19455);
 var __TURBOPACK__imported__module__72436__ = __turbopack_context__.i(72436);
 var __TURBOPACK__imported__module__15288__ = __turbopack_context__.i(15288);
+// MERGED MODULE: [project]/src/components/ui/alert.tsx [app-client] (ecmascript)
+;
+var __TURBOPACK__imported__module__8063__1 = __TURBOPACK__imported__module__8063__;
+var __TURBOPACK__imported__module__94237__ = __turbopack_context__.i(94237);
+var __TURBOPACK__imported__module__75157__ = __turbopack_context__.i(75157);
+;
+;
+;
+const alertVariants = (0, __TURBOPACK__imported__module__94237__["cva"])("group/alert relative grid w-full gap-0.5 rounded-none border px-2.5 py-2 text-left text-xs has-data-[slot=alert-action]:relative has-data-[slot=alert-action]:pr-18 has-[>svg]:grid-cols-[auto_1fr] has-[>svg]:gap-x-2 *:[svg]:row-span-2 *:[svg]:translate-y-0 *:[svg]:text-current *:[svg:not([class*='size-'])]:size-4", {
+    variants: {
+        variant: {
+            default: "bg-card text-card-foreground",
+            destructive: "bg-card text-destructive *:data-[slot=alert-description]:text-destructive/90 *:[svg]:text-current"
+        }
+    },
+    defaultVariants: {
+        variant: "default"
+    }
+});
+function Alert({ className, variant, ...props }) {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__1["jsx"])("div", {
+        "data-slot": "alert",
+        role: "alert",
+        className: (0, __TURBOPACK__imported__module__75157__["cn"])(alertVariants({
+            variant
+        }), className),
+        ...props
+    });
+}
+function AlertTitle({ className, ...props }) {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__1["jsx"])("div", {
+        "data-slot": "alert-title",
+        className: (0, __TURBOPACK__imported__module__75157__["cn"])("font-medium group-has-[>svg]/alert:col-start-2 [&_a]:underline [&_a]:underline-offset-3 [&_a]:hover:text-foreground", className),
+        ...props
+    });
+}
+function AlertDescription({ className, ...props }) {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__1["jsx"])("div", {
+        "data-slot": "alert-description",
+        className: (0, __TURBOPACK__imported__module__75157__["cn"])("text-xs/relaxed text-balance text-muted-foreground md:text-pretty [&_a]:underline [&_a]:underline-offset-3 [&_a]:hover:text-foreground [&_p:not(:last-child)]:mb-2", className),
+        ...props
+    });
+}
+function AlertAction({ className, ...props }) {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__1["jsx"])("div", {
+        "data-slot": "alert-action",
+        className: (0, __TURBOPACK__imported__module__75157__["cn"])("absolute top-[calc(--spacing(1.25))] right-[calc(--spacing(1.25))]", className),
+        ...props
+    });
+}
+;
 // MERGED MODULE: [project]/node_modules/.pnpm/lucide-react@1.16.0_react@19.2.4/node_modules/lucide-react/dist/esm/icons/contact.mjs [app-client] (ecmascript) <export default as Contact>
 ;
 // MERGED MODULE: [project]/node_modules/.pnpm/lucide-react@1.16.0_react@19.2.4/node_modules/lucide-react/dist/esm/icons/contact.mjs [app-client] (ecmascript)
@@ -692,131 +786,37 @@ const __iconNode1 = [
 ];
 const TrendingUpDown = (0, __TURBOPACK__imported__module__67022__1["default"])("trending-up-down", __iconNode1);
 ;
-// MERGED MODULE: [project]/node_modules/.pnpm/lucide-react@1.16.0_react@19.2.4/node_modules/lucide-react/dist/esm/icons/server.mjs [app-client] (ecmascript) <export default as Server>
+var __TURBOPACK__imported__module__69631__ = __turbopack_context__.i(69631);
+// MERGED MODULE: [project]/node_modules/.pnpm/lucide-react@1.16.0_react@19.2.4/node_modules/lucide-react/dist/esm/icons/triangle-alert.mjs [app-client] (ecmascript) <export default as AlertTriangle>
 ;
-// MERGED MODULE: [project]/node_modules/.pnpm/lucide-react@1.16.0_react@19.2.4/node_modules/lucide-react/dist/esm/icons/server.mjs [app-client] (ecmascript)
+// MERGED MODULE: [project]/node_modules/.pnpm/lucide-react@1.16.0_react@19.2.4/node_modules/lucide-react/dist/esm/icons/triangle-alert.mjs [app-client] (ecmascript)
 ;
 var __TURBOPACK__imported__module__67022__2 = __TURBOPACK__imported__module__67022__;
 ;
 const __iconNode2 = [
     [
-        "rect",
-        {
-            width: "20",
-            height: "8",
-            x: "2",
-            y: "2",
-            rx: "2",
-            ry: "2",
-            key: "ngkwjq"
-        }
-    ],
-    [
-        "rect",
-        {
-            width: "20",
-            height: "8",
-            x: "2",
-            y: "14",
-            rx: "2",
-            ry: "2",
-            key: "iecqi9"
-        }
-    ],
-    [
-        "line",
-        {
-            x1: "6",
-            x2: "6.01",
-            y1: "6",
-            y2: "6",
-            key: "16zg32"
-        }
-    ],
-    [
-        "line",
-        {
-            x1: "6",
-            x2: "6.01",
-            y1: "18",
-            y2: "18",
-            key: "nzw8ys"
-        }
-    ]
-];
-const Server = (0, __TURBOPACK__imported__module__67022__2["default"])("server", __iconNode2);
-;
-// MERGED MODULE: [project]/node_modules/.pnpm/lucide-react@1.16.0_react@19.2.4/node_modules/lucide-react/dist/esm/icons/monitor.mjs [app-client] (ecmascript) <export default as Monitor>
-;
-// MERGED MODULE: [project]/node_modules/.pnpm/lucide-react@1.16.0_react@19.2.4/node_modules/lucide-react/dist/esm/icons/monitor.mjs [app-client] (ecmascript)
-;
-var __TURBOPACK__imported__module__67022__3 = __TURBOPACK__imported__module__67022__;
-;
-const __iconNode3 = [
-    [
-        "rect",
-        {
-            width: "20",
-            height: "14",
-            x: "2",
-            y: "3",
-            rx: "2",
-            key: "48i651"
-        }
-    ],
-    [
-        "line",
-        {
-            x1: "8",
-            x2: "16",
-            y1: "21",
-            y2: "21",
-            key: "1svkeh"
-        }
-    ],
-    [
-        "line",
-        {
-            x1: "12",
-            x2: "12",
-            y1: "17",
-            y2: "21",
-            key: "vw1qmm"
-        }
-    ]
-];
-const Monitor = (0, __TURBOPACK__imported__module__67022__3["default"])("monitor", __iconNode3);
-;
-// MERGED MODULE: [project]/node_modules/.pnpm/lucide-react@1.16.0_react@19.2.4/node_modules/lucide-react/dist/esm/icons/external-link.mjs [app-client] (ecmascript) <export default as ExternalLink>
-;
-// MERGED MODULE: [project]/node_modules/.pnpm/lucide-react@1.16.0_react@19.2.4/node_modules/lucide-react/dist/esm/icons/external-link.mjs [app-client] (ecmascript)
-;
-var __TURBOPACK__imported__module__67022__4 = __TURBOPACK__imported__module__67022__;
-;
-const __iconNode4 = [
-    [
         "path",
         {
-            d: "M15 3h6v6",
-            key: "1q9fwt"
+            d: "m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3",
+            key: "wmoenq"
         }
     ],
     [
         "path",
         {
-            d: "M10 14 21 3",
-            key: "gplh6r"
+            d: "M12 9v4",
+            key: "juzpu7"
         }
     ],
     [
         "path",
         {
-            d: "M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6",
-            key: "a6xqqp"
+            d: "M12 17h.01",
+            key: "p32p05"
         }
     ]
 ];
-const ExternalLink = (0, __TURBOPACK__imported__module__67022__4["default"])("external-link", __iconNode4);
+const TriangleAlert = (0, __TURBOPACK__imported__module__67022__2["default"])("triangle-alert", __iconNode2);
 ;
 "use client";
 ;
@@ -826,18 +826,24 @@ const ExternalLink = (0, __TURBOPACK__imported__module__67022__4["default"])("ex
 ;
 ;
 function StartPage() {
-    const startActions = [
+    const startSteps = [
         {
-            icon: Server,
-            title: "Local Backend Service",
-            subtitle: "Clone and run FastAPI server locally",
-            url: "https://github.com/zian/dloomberg-service"
+            step: 1,
+            title: "Clone Dloomberg Service & Run Locally",
+            description: "This is a pure static frontend. Backend logic currently requires local execution. Cloud hosting may be considered if funding permits in the future.",
+            url: "https://github.com/ziancn/dloomberg-service"
         },
         {
-            icon: Monitor,
-            title: "Bloomberg Terminal",
-            subtitle: "Launch to access BLPAPI",
-            url: "#"
+            step: 2,
+            title: "Launch Bloomberg Terminal",
+            description: "To use Bloomberg BLPAPI as a data source, open your Bloomberg Terminal. Dloomberg Service will automatically fetch data via BLPAPI.",
+            note: "Reminder: This consumes your BLPAPI quota. Exhausting it will affect data retrieval for Excel Bloomberg functions.",
+            optional: true
+        },
+        {
+            step: 3,
+            title: "Check Connection Status",
+            description: "If both Step 1 and Step 2 are running properly, the status indicator in the top bar will show a green dot. Otherwise, it will be red."
         }
     ];
     const recentFunctions = [
@@ -897,67 +903,67 @@ function StartPage() {
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("h2", {
                                         className: "mb-4 text-xl font-medium",
-                                        children: "Start"
+                                        children: "Get Started"
                                     }),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("div", {
                                         className: "flex flex-col",
-                                        children: startActions.map((action, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsxs"])(__TURBOPACK__imported__module__19455__["Button"], {
-                                                variant: "ghost",
-                                                className: "h-auto justify-start px-3 py-2 text-left",
+                                        children: startSteps.map((step)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsxs"])("div", {
+                                                className: "flex items-start gap-3 py-2.5",
                                                 children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])(action.icon, {
-                                                        className: "mr-3 size-5"
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("span", {
+                                                        className: "mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-muted text-[11px] font-semibold text-muted-foreground",
+                                                        children: step.step
                                                     }),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsxs"])("div", {
-                                                        className: "flex-1",
+                                                        className: "flex-1 min-w-0",
                                                         children: [
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("div", {
-                                                                className: "text-sm font-medium",
-                                                                children: action.title
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsxs"])("div", {
+                                                                className: "flex items-center gap-1.5",
+                                                                children: [
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsxs"])("span", {
+                                                                        className: "text-sm font-medium",
+                                                                        children: [
+                                                                            step.title,
+                                                                            step.optional && /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsxs"])("span", {
+                                                                                className: "ml-1 text-xs font-normal text-muted-foreground",
+                                                                                children: [
+                                                                                    " ",
+                                                                                    "(Optional)"
+                                                                                ]
+                                                                            })
+                                                                        ]
+                                                                    }),
+                                                                    step.url && /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("a", {
+                                                                        href: step.url,
+                                                                        target: "_blank",
+                                                                        rel: "noopener noreferrer",
+                                                                        className: "ml-auto shrink-0 text-muted-foreground transition-colors hover:text-foreground",
+                                                                        title: "Open in new tab",
+                                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])(__TURBOPACK__imported__module__69631__["ExternalLink"], {
+                                                                            className: "size-4"
+                                                                        })
+                                                                    })
+                                                                ]
                                                             }),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("div", {
-                                                                className: "mt-0.5 text-xs text-muted-foreground",
-                                                                children: action.subtitle
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("p", {
+                                                                className: "mt-0.5 text-xs text-muted-foreground leading-relaxed",
+                                                                children: step.description
+                                                            }),
+                                                            step.note && /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsxs"])(Alert, {
+                                                                variant: "default",
+                                                                className: "mt-2 bg-bloomberg-primary/10",
+                                                                children: [
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])(TriangleAlert, {}),
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])(AlertDescription, {
+                                                                        className: "text-wrap",
+                                                                        children: step.note
+                                                                    })
+                                                                ]
                                                             })
                                                         ]
-                                                    }),
-                                                    action.shortcut && /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("kbd", {
-                                                        className: "hidden rounded border border-border bg-secondary px-1.5 py-0.5 font-mono text-xs text-muted-foreground sm:inline",
-                                                        children: action.shortcut
                                                     })
                                                 ]
-                                            }, idx))
-                                    }),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])(__TURBOPACK__imported__module__72436__["Separator"], {
-                                        className: "my-6"
-                                    }),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("h2", {
-                                        className: "mb-2 text-sm font-semibold uppercase tracking-wider text-muted-foreground",
-                                        children: "GitHub Repos"
-                                    }),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("div", {
-                                        className: "flex flex-col",
-                                        children: githubRepos.map((project, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsxs"])("a", {
-                                                href: `https://${project.path}`,
-                                                target: "_blank",
-                                                rel: "noopener noreferrer",
-                                                className: "inline-flex h-auto flex-col items-start px-3 py-2 text-left transition-colors hover:bg-accent hover:text-accent-foreground",
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsxs"])("span", {
-                                                        className: "inline-flex items-center gap-1.5 text-sm font-medium text-blue-400",
-                                                        children: [
-                                                            project.name,
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])(ExternalLink, {
-                                                                className: "size-3 text-muted-foreground"
-                                                            })
-                                                        ]
-                                                    }),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("span", {
-                                                        className: "max-w-xs truncate text-xs text-muted-foreground md:max-w-full",
-                                                        children: project.path
-                                                    })
-                                                ]
-                                            }, idx))
+                                            }, step.step))
                                     })
                                 ]
                             }),
@@ -1003,78 +1009,33 @@ function StartPage() {
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])(__TURBOPACK__imported__module__72436__["Separator"], {
                                         className: "my-8"
                                     }),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsxs"])("div", {
-                                        className: "grid grid-cols-2 gap-4 text-xs text-muted-foreground",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsxs"])("div", {
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("h2", {
+                                        className: "mb-2 text-sm font-semibold uppercase tracking-wider text-muted-foreground",
+                                        children: "GitHub Repos"
+                                    }),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("div", {
+                                        className: "flex flex-col",
+                                        children: githubRepos.map((project, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsxs"])("a", {
+                                                href: `https://${project.path}`,
+                                                target: "_blank",
+                                                rel: "noopener noreferrer",
+                                                className: "inline-flex h-auto flex-col items-start px-3 py-2 text-left transition-colors hover:bg-accent hover:text-accent-foreground",
                                                 children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("div", {
-                                                        className: "mb-2 font-semibold text-foreground",
-                                                        children: "Dummy Links"
-                                                    }),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsxs"])("ul", {
-                                                        className: "space-y-1.5",
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsxs"])("span", {
+                                                        className: "inline-flex items-center gap-1.5 text-sm font-medium text-blue-400",
                                                         children: [
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("li", {
-                                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("a", {
-                                                                    href: "#",
-                                                                    className: "text-primary underline-offset-4 hover:underline",
-                                                                    children: "Link"
-                                                                })
-                                                            }),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("li", {
-                                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("a", {
-                                                                    href: "#",
-                                                                    className: "text-primary underline-offset-4 hover:underline",
-                                                                    children: "Link"
-                                                                })
-                                                            }),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("li", {
-                                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("a", {
-                                                                    href: "#",
-                                                                    className: "text-primary underline-offset-4 hover:underline",
-                                                                    children: "Link"
-                                                                })
+                                                            project.name,
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])(__TURBOPACK__imported__module__69631__["ExternalLink"], {
+                                                                className: "size-3 text-muted-foreground"
                                                             })
                                                         ]
-                                                    })
-                                                ]
-                                            }),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsxs"])("div", {
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("div", {
-                                                        className: "mb-2 font-semibold text-foreground",
-                                                        children: "For future use"
                                                     }),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsxs"])("ul", {
-                                                        className: "space-y-1.5",
-                                                        children: [
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("li", {
-                                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("a", {
-                                                                    href: "#",
-                                                                    className: "text-primary underline-offset-4 hover:underline",
-                                                                    children: "Link"
-                                                                })
-                                                            }),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("li", {
-                                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("a", {
-                                                                    href: "#",
-                                                                    className: "text-primary underline-offset-4 hover:underline",
-                                                                    children: "Link"
-                                                                })
-                                                            }),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("li", {
-                                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("a", {
-                                                                    href: "#",
-                                                                    className: "text-primary underline-offset-4 hover:underline",
-                                                                    children: "Link"
-                                                                })
-                                                            })
-                                                        ]
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("span", {
+                                                        className: "max-w-xs truncate text-xs text-muted-foreground md:max-w-full",
+                                                        children: project.path
                                                     })
                                                 ]
-                                            })
-                                        ]
+                                            }, idx))
                                     })
                                 ]
                             })

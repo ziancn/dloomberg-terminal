@@ -1,7 +1,10 @@
 (globalThis["TURBOPACK"] || (globalThis["TURBOPACK"] = [])).push([typeof document === "object" ? document.currentScript : undefined,
-15288, ((__turbopack_context__) => {
+15288, 69631, 
+((__turbopack_context__) => {
 "use strict";
 
+// MERGED MODULE: [project]/src/components/ui/card.tsx [app-client] (ecmascript)
+;
 var __TURBOPACK__imported__module__8063__ = __turbopack_context__.i(8063);
 var __TURBOPACK__imported__module__75157__ = __turbopack_context__.i(75157);
 ;
@@ -73,9 +76,50 @@ __turbopack_context__.s([
     "CardTitle",
     0,
     CardTitle
-]);
+], 15288);
+// MERGED MODULE: [project]/node_modules/.pnpm/lucide-react@1.16.0_react@19.2.4/node_modules/lucide-react/dist/esm/icons/external-link.mjs [app-client] (ecmascript) <export default as ExternalLink>
+;
+// MERGED MODULE: [project]/node_modules/.pnpm/lucide-react@1.16.0_react@19.2.4/node_modules/lucide-react/dist/esm/icons/external-link.mjs [app-client] (ecmascript)
+;
+/**
+ * @license lucide-react v1.16.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ var __TURBOPACK__imported__module__67022__ = __turbopack_context__.i(67022);
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M15 3h6v6",
+            key: "1q9fwt"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M10 14 21 3",
+            key: "gplh6r"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6",
+            key: "a6xqqp"
+        }
+    ]
+];
+const ExternalLink = (0, __TURBOPACK__imported__module__67022__["default"])("external-link", __iconNode);
+;
+__turbopack_context__.s([
+    "ExternalLink",
+    0,
+    ExternalLink
+], 69631);
 }),
-50340, ((__turbopack_context__) => {
+9938, ((__turbopack_context__) => {
 "use strict";
 
 var __TURBOPACK__imported__module__8063__ = __turbopack_context__.i(8063);
@@ -84,7 +128,9 @@ var __TURBOPACK__imported__module__4508__ = __turbopack_context__.i(4508);
 ;
 ;
 function Page() {
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])(__TURBOPACK__imported__module__4508__["SfcprPage"], {});
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])(__TURBOPACK__imported__module__8063__["Fragment"], {
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])(__TURBOPACK__imported__module__4508__["SfcprPage"], {})
+    });
 }
 __turbopack_context__.s([
     "default",

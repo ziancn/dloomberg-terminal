@@ -8,3 +8,7 @@
   padding: 6px 0;
 }
 
+.dloomberg-terminal-grid .ag-tooltip {
+  transition: none !important;
+}
+

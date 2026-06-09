@@ -357,7 +357,7 @@ function HkssPage() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__1["jsx"])("div", {
         className: "flex flex-col items-center size-full px-4 overflow-auto",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__1["jsxs"])("div", {
-            className: "size-full max-w-7xl flex flex-col",
+            className: "size-full max-w-350 flex flex-col",
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__1["jsxs"])("div", {
                     className: "flex py-4 justify-between",

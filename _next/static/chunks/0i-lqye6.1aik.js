@@ -1112,6 +1112,7 @@ var __TURBOPACK__imported__module__53102__ = __turbopack_context__.i(53102);
 var __TURBOPACK__imported__module__78786__ = __turbopack_context__.i(78786);
 var __TURBOPACK__imported__module__75636__ = __turbopack_context__.i(75636);
 var __TURBOPACK__imported__module__25133__ = __turbopack_context__.i(25133);
+var __TURBOPACK__imported__module__69631__ = __turbopack_context__.i(69631);
 "use client";
 ;
 ;
@@ -1122,14 +1123,28 @@ var __TURBOPACK__imported__module__25133__ = __turbopack_context__.i(25133);
 ;
 const modules = [
     __TURBOPACK__imported__module__9279__["AllCommunityModule"],
+    __TURBOPACK__imported__module__9279__["TooltipModule"],
     __TURBOPACK__imported__module__53102__["CellSelectionModule"],
     __TURBOPACK__imported__module__53102__["ClipboardModule"],
     __TURBOPACK__imported__module__53102__["ContextMenuModule"],
     __TURBOPACK__imported__module__53102__["SideBarModule"],
     __TURBOPACK__imported__module__53102__["FiltersToolPanelModule"],
     __TURBOPACK__imported__module__53102__["ColumnsToolPanelModule"],
-    __TURBOPACK__imported__module__53102__["StatusBarModule"]
+    __TURBOPACK__imported__module__53102__["StatusBarModule"],
+    __TURBOPACK__imported__module__53102__["SetFilterModule"]
 ];
+const SFC_LICENCE_TYPES = {
+    1: "Dealing in securities",
+    2: "Dealing in futures contracts",
+    3: "Leveraged foreign exchange trading",
+    4: "Advising on securities",
+    5: "Advising on futures contracts",
+    6: "Advising on corporate finance",
+    7: "Providing automated trading services",
+    8: "Securities margin financing",
+    9: "Asset management",
+    10: "Providing credit rating services"
+};
 function SfcprGrid({ rowData, isLoading }) {
     const defaultColDef = (0, __TURBOPACK__imported__module__51268__10["useMemo"])(()=>({
             sortable: true,
@@ -1139,12 +1154,15 @@ function SfcprGrid({ rowData, isLoading }) {
     const columnDefs = (0, __TURBOPACK__imported__module__51268__10["useMemo"])(()=>{
         const typeCol = (actType)=>({
                 headerName: `T${actType}`,
+                headerTooltip: SFC_LICENCE_TYPES[actType],
+                sortable: false,
                 flex: 0.5,
                 minWidth: 40,
                 cellRenderer: (params)=>{
                     if (!params.data) return null;
-                    const has = params.data.raDetails.some((ra)=>ra.actType === actType);
-                    return has ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__5["jsx"])("div", {
+                    const detail = params.data.raDetails.find((ra)=>ra.actType === actType);
+                    const hasLicence = detail?.hasLicence ?? false;
+                    return hasLicence ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__5["jsx"])("div", {
                         className: "flex items-center justify-center h-full text-emerald-500",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__5["jsx"])(__TURBOPACK__imported__module__75636__["Check"], {
                             className: "size-3.5"
@@ -1195,7 +1213,10 @@ function SfcprGrid({ rowData, isLoading }) {
             {
                 field: "hasActiveLicence",
                 headerName: "Active Licence",
-                filter: true,
+                filter: "agSetColumnFilter",
+                filterParams: {
+                    valueFormatter: (params)=>params.value === "Y" ? "Active" : "Inactive"
+                },
                 flex: 1,
                 minWidth: 100,
                 cellRenderer: (params)=>{
@@ -1220,12 +1241,17 @@ function SfcprGrid({ rowData, isLoading }) {
                 cellRenderer: (params)=>{
                     if (!params.data?.ceref) return null;
                     const type = params.data.isCorp ? "corp" : "indi";
-                    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__5["jsx"])("a", {
-                        href: `https://apps.sfc.hk/publicregWeb/${type}/${params.data.ceref}/details`,
-                        target: "_blank",
-                        rel: "noopener noreferrer",
-                        className: "text-blue-600 underline hover:text-blue-800",
-                        children: "Details"
+                    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__5["jsx"])("div", {
+                        className: "flex items-center justify-center h-full",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__5["jsx"])("a", {
+                            href: `https://apps.sfc.hk/publicregWeb/${type}/${params.data.ceref}/details`,
+                            target: "_blank",
+                            rel: "noopener noreferrer",
+                            className: "text-muted-foreground hover:text-foreground transition-colors",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__5["jsx"])(__TURBOPACK__imported__module__69631__["ExternalLink"], {
+                                className: "size-4"
+                            })
+                        })
                     });
                 }
             },
@@ -1276,6 +1302,8 @@ function SfcprGrid({ rowData, isLoading }) {
                 loading: isLoading,
                 columnDefs: columnDefs,
                 defaultColDef: defaultColDef,
+                tooltipShowDelay: 0,
+                // tooltipHideDelay={3000}
                 statusBar: statusBar,
                 onFirstDataRendered: onFirstDataRendered,
                 sideBar: {
@@ -1309,6 +1337,19 @@ function SfcprGrid({ rowData, isLoading }) {
 ;
 ;
 ;
+function RadioOption({ value, id, label }) {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsxs"])("label", {
+        htmlFor: id,
+        className: "flex items-center gap-2 text-xs cursor-pointer rounded-md border px-3 py-2 has-data-[state=checked]:border-primary/50 has-data-[state=checked]:bg-primary/5 transition-colors",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])(RadioGroupItem, {
+                value: value,
+                id: id
+            }),
+            label
+        ]
+    });
+}
 function SfcprPage() {
     const { rowData, totalCount, isLoading, search } = useSfcData();
     const [keyword, setKeyword] = (0, __TURBOPACK__imported__module__51268__["useState"])("");
@@ -1356,7 +1397,7 @@ function SfcprPage() {
                                         className: "grid grid-cols-1 sm:grid-cols-2 gap-5",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsxs"])("div", {
-                                                className: "space-y-2.5",
+                                                className: "space-y-2",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("h3", {
                                                         className: "text-sm font-medium text-muted-foreground",
@@ -1367,34 +1408,22 @@ function SfcprPage() {
                                                         onValueChange: (v)=>setLicstatus(v),
                                                         className: "gap-2",
                                                         children: [
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsxs"])("label", {
-                                                                htmlFor: "status-active",
-                                                                className: "flex items-center gap-2 text-xs cursor-pointer rounded-md border px-3 py-2 has-data-[state=checked]:border-primary/50 has-data-[state=checked]:bg-primary/5 transition-colors",
-                                                                children: [
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])(RadioGroupItem, {
-                                                                        value: "active",
-                                                                        id: "status-active"
-                                                                    }),
-                                                                    "Active"
-                                                                ]
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])(RadioOption, {
+                                                                value: "active",
+                                                                id: "status-active",
+                                                                label: "Active"
                                                             }),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsxs"])("label", {
-                                                                htmlFor: "status-active-inactive",
-                                                                className: "flex items-center gap-2 text-xs cursor-pointer rounded-md border px-3 py-2 has-data-[state=checked]:border-primary/50 has-data-[state=checked]:bg-primary/5 transition-colors",
-                                                                children: [
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])(RadioGroupItem, {
-                                                                        value: "all",
-                                                                        id: "status-active-inactive"
-                                                                    }),
-                                                                    "Active and inactive"
-                                                                ]
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])(RadioOption, {
+                                                                value: "all",
+                                                                id: "status-active-inactive",
+                                                                label: "Active and inactive"
                                                             })
                                                         ]
                                                     })
                                                 ]
                                             }),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsxs"])("div", {
-                                                className: "space-y-2.5",
+                                                className: "space-y-2",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("h3", {
                                                         className: "text-sm font-medium text-muted-foreground",
@@ -1405,38 +1434,20 @@ function SfcprPage() {
                                                         onValueChange: (v)=>setSearchby(v),
                                                         className: "gap-2",
                                                         children: [
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsxs"])("label", {
-                                                                htmlFor: "search-individual",
-                                                                className: "flex items-center gap-2 text-xs cursor-pointer rounded-md border px-3 py-2 has-data-[state=checked]:border-primary/50 has-data-[state=checked]:bg-primary/5 transition-colors",
-                                                                children: [
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])(RadioGroupItem, {
-                                                                        value: "individual",
-                                                                        id: "search-individual"
-                                                                    }),
-                                                                    "Individual name"
-                                                                ]
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])(RadioOption, {
+                                                                value: "individual",
+                                                                id: "search-individual",
+                                                                label: "Individual name"
                                                             }),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsxs"])("label", {
-                                                                htmlFor: "search-corporation",
-                                                                className: "flex items-center gap-2 text-xs cursor-pointer rounded-md border px-3 py-2 has-data-[state=checked]:border-primary/50 has-data-[state=checked]:bg-primary/5 transition-colors",
-                                                                children: [
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])(RadioGroupItem, {
-                                                                        value: "corporation",
-                                                                        id: "search-corporation"
-                                                                    }),
-                                                                    "Corporation name"
-                                                                ]
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])(RadioOption, {
+                                                                value: "corporation",
+                                                                id: "search-corporation",
+                                                                label: "Corporation name"
                                                             }),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsxs"])("label", {
-                                                                htmlFor: "search-entity-number",
-                                                                className: "flex items-center gap-2 text-xs cursor-pointer rounded-md border px-3 py-2 has-data-[state=checked]:border-primary/50 has-data-[state=checked]:bg-primary/5 transition-colors",
-                                                                children: [
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])(RadioGroupItem, {
-                                                                        value: "ceref",
-                                                                        id: "search-entity-number"
-                                                                    }),
-                                                                    "Central entity number"
-                                                                ]
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])(RadioOption, {
+                                                                value: "ceref",
+                                                                id: "search-entity-number",
+                                                                label: "Central entity number"
                                                             })
                                                         ]
                                                     })
