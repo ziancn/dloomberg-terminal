@@ -880,8 +880,14 @@ function StartPage() {
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsxs"])("h1", {
                         className: "text-3xl font-semibold tracking-tight",
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("p", {
-                                children: "Dloomberg Terminal"
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsxs"])("p", {
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("span", {
+                                        className: "font-(family-name:--font-faster-one) text-[2.4rem] font-light",
+                                        children: "D"
+                                    }),
+                                    "loomberg Terminal"
+                                ]
                             }),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("p", {
                                 className: "text-xl text-muted-foreground uppercase",
@@ -1052,7 +1058,7 @@ __turbopack_context__.s([
     StartPage
 ], 75721);
 }),
-52683, ((__turbopack_context__) => {
+63135, ((__turbopack_context__) => {
 "use strict";
 
 var __TURBOPACK__imported__module__8063__ = __turbopack_context__.i(8063);

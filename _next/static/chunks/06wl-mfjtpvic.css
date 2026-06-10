@@ -101,6 +101,7 @@
     --text-xl--line-height: calc(1.75 / 1.25);
     --text-3xl: 1.875rem;
     --text-3xl--line-height: calc(2.25 / 1.875);
+    --font-weight-light: 300;
     --font-weight-normal: 400;
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
@@ -1474,6 +1475,10 @@
     text-align: left;
   }
 
+  .font-\(family-name\:--font-faster-one\) {
+    font-family: var(--font-faster-one);
+  }
+
   .font-heading {
     font-family: var(--font-sans);
   }
@@ -1516,6 +1521,10 @@
     line-height: var(--leading-relaxed);
   }
 
+  .text-\[2\.4rem\] {
+    font-size: 2.4rem;
+  }
+
   .text-\[11px\] {
     font-size: 11px;
   }
@@ -1538,6 +1547,11 @@
   .leading-snug {
     --tw-leading: var(--leading-snug);
     line-height: var(--leading-snug);
+  }
+
+  .font-light {
+    --tw-font-weight: var(--font-weight-light);
+    font-weight: var(--font-weight-light);
   }
 
   .font-medium {
