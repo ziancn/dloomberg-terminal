@@ -40,7 +40,7 @@ export function SearchCommand() {
     return (
         <>
             <Button 
-                variant="default" size="xs"
+                variant="default" size="sm"
                 className="gap-2 border-0 bg-bloomberg-primary hover:bg-bloomberg-primary/70"
                 onClick={() => {setOpen(true)}}
             >

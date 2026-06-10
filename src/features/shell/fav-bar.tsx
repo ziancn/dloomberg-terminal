@@ -27,7 +27,7 @@ export function FavBar() {
           <Button
             key={feature.id}
             variant="default"
-            size="xs"
+            size="sm"
             className="font-mono"
             onClick={() => router.push(feature.path)}
           >
@@ -41,7 +41,7 @@ export function FavBar() {
         <DropdownMenu>
           <DropdownMenuTrigger
             render={(props) => (
-              <Button variant="default" size="xs" {...props}>
+              <Button variant="default" size="sm" {...props}>
                 Quick Access
                 <ChevronDown className="-me-1 ms-1 size-4" />
               </Button>
