@@ -1,15 +1,12 @@
 "use client"
 
-import { SettingsPage } from "@/features/settings/settings-page"
-import Loading from "../loading"
-import { SfcprPage } from "@/features/sfcpr/sfcpr-page"
+import { LicenceTimelineChart } from "@/features/tests/licence-timeline-chart"
 
 export default function Page() {
   return (
-    <>
-        {/* <SettingsPage /> */}
-        {/* <Loading /> */}
-        <SfcprPage />
-    </>
+    // <div className="min-h-screen bg-background">
+    //   <LicenceTimelineChart />
+    // </div>
+    <></>
   )
 }

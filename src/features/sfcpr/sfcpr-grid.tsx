@@ -99,14 +99,14 @@ export function SfcprGrid({ rowData, isLoading }: SfcprGridProps) {
       {
         field: "name",
         headerName: "Name (EN)",
-        filter: true,
+        filter: "agTextColumnFilter",
         flex: 2,
         minWidth: 120,
       },
       {
         field: "nameChi",
         headerName: "Name (ZH)",
-        filter: true,
+        filter: "agTextColumnFilter",
         flex: 2,
         minWidth: 100,
       },
