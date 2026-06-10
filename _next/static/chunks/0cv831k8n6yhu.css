@@ -90,7 +90,6 @@
     --spacing: .25rem;
     --container-xs: 20rem;
     --container-sm: 24rem;
-    --container-5xl: 64rem;
     --container-6xl: 72rem;
     --text-xs: .75rem;
     --text-xs--line-height: calc(1 / .75);
@@ -869,10 +868,6 @@
 
   .max-w-\(--skeleton-width\) {
     max-width: var(--skeleton-width);
-  }
-
-  .max-w-5xl {
-    max-width: var(--container-5xl);
   }
 
   .max-w-6xl {
