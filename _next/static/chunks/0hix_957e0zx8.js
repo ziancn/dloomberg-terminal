@@ -9572,7 +9572,7 @@ function SearchCommand() {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__4["jsxs"])(__TURBOPACK__imported__module__19455__1["Button"], {
                 variant: "default",
-                size: "xs",
+                size: "sm",
                 className: "gap-2 border-0 bg-bloomberg-primary hover:bg-bloomberg-primary/70",
                 onClick: ()=>{
                     setOpen(true);
@@ -17887,7 +17887,7 @@ function FavBar() {
                 className: "hidden md:flex items-center gap-2",
                 children: appRegistry.map((feature)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__3["jsx"])(__TURBOPACK__imported__module__19455__["Button"], {
                         variant: "default",
-                        size: "xs",
+                        size: "sm",
                         className: "font-mono",
                         onClick: ()=>router.push(feature.path),
                         children: feature.label
@@ -17900,7 +17900,7 @@ function FavBar() {
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__3["jsx"])(DropdownMenuTrigger, {
                             render: (props)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__3["jsxs"])(__TURBOPACK__imported__module__19455__["Button"], {
                                     variant: "default",
-                                    size: "xs",
+                                    size: "sm",
                                     ...props,
                                     children: [
                                         "Quick Access",

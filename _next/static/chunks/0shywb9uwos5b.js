@@ -119,23 +119,4 @@ __turbopack_context__.s([
     ExternalLink
 ], 69631);
 }),
-9938, ((__turbopack_context__) => {
-"use strict";
-
-var __TURBOPACK__imported__module__8063__ = __turbopack_context__.i(8063);
-var __TURBOPACK__imported__module__4508__ = __turbopack_context__.i(4508);
-"use client";
-;
-;
-function Page() {
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])(__TURBOPACK__imported__module__8063__["Fragment"], {
-        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])(__TURBOPACK__imported__module__4508__["SfcprPage"], {})
-    });
-}
-__turbopack_context__.s([
-    "default",
-    0,
-    Page
-]);
-}),
 ]);

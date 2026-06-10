@@ -1,16 +1,19 @@
 (globalThis["TURBOPACK"] || (globalThis["TURBOPACK"] = [])).push([typeof document === "object" ? document.currentScript : undefined,
-4508, ((__turbopack_context__) => {
+50340, ((__turbopack_context__) => {
 "use strict";
 
-// MERGED MODULE: [project]/src/features/sfcpr/sfcpr-page.tsx [app-client] (ecmascript)
+// MERGED MODULE: [project]/src/app/sfcpr/page.tsx [app-client] (ecmascript)
 ;
 var __TURBOPACK__imported__module__8063__ = __turbopack_context__.i(8063);
+// MERGED MODULE: [project]/src/features/sfcpr/sfcpr-page.tsx [app-client] (ecmascript)
+;
+var __TURBOPACK__imported__module__8063__1 = __TURBOPACK__imported__module__8063__;
 var __TURBOPACK__imported__module__51268__ = __turbopack_context__.i(51268);
 var __TURBOPACK__imported__module__19455__ = __turbopack_context__.i(19455);
 var __TURBOPACK__imported__module__93479__ = __turbopack_context__.i(93479);
 // MERGED MODULE: [project]/src/components/ui/radio-group.tsx [app-client] (ecmascript)
 ;
-var __TURBOPACK__imported__module__8063__1 = __TURBOPACK__imported__module__8063__;
+var __TURBOPACK__imported__module__8063__2 = __TURBOPACK__imported__module__8063__;
 // MERGED MODULE: [project]/node_modules/.pnpm/@base-ui+react@1.4.1_@types_bf6a27bfe7c944d33b05ef5c074fb210/node_modules/@base-ui/react/esm/radio/index.parts.js [app-client] (ecmascript) <export * as Radio>
 ;
 // MERGED MODULE: [project]/node_modules/.pnpm/@base-ui+react@1.4.1_@types_bf6a27bfe7c944d33b05ef5c074fb210/node_modules/@base-ui/react/esm/radio/index.parts.js [app-client] (ecmascript)
@@ -201,7 +204,7 @@ function useRadioRootContext() {
     }
     return value;
 }
-var __TURBOPACK__imported__module__8063__2 = __TURBOPACK__imported__module__8063__;
+var __TURBOPACK__imported__module__8063__3 = __TURBOPACK__imported__module__8063__;
 'use client';
 ;
 ;
@@ -398,10 +401,10 @@ const RadioRoot = /*#__PURE__*/ __TURBOPACK__imported__module__51268__1["forward
         props,
         stateAttributesMapping: stateAttributesMapping
     });
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__2["jsxs"])(RadioRootContext.Provider, {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__3["jsxs"])(RadioRootContext.Provider, {
         value: contextValue,
         children: [
-            isRadioGroup ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__2["jsx"])(__TURBOPACK__imported__module__4438__["CompositeItem"], {
+            isRadioGroup ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__3["jsx"])(__TURBOPACK__imported__module__4438__["CompositeItem"], {
                 tag: "span",
                 render: render,
                 className: className,
@@ -411,7 +414,7 @@ const RadioRoot = /*#__PURE__*/ __TURBOPACK__imported__module__51268__1["forward
                 props: props,
                 stateAttributesMapping: stateAttributesMapping
             }) : element,
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__2["jsx"])("input", {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__3["jsx"])("input", {
                 ...inputProps,
                 suppressHydrationWarning: true
             })
@@ -764,7 +767,7 @@ function isModifierKeySet(event, ignoredModifierKeys) {
 var __TURBOPACK__imported__module__19376__ = __turbopack_context__.i(19376);
 var __TURBOPACK__imported__module__19996__2 = __TURBOPACK__imported__module__19996__;
 var __TURBOPACK__imported__module__25909__ = __turbopack_context__.i(25909);
-var __TURBOPACK__imported__module__8063__3 = __TURBOPACK__imported__module__8063__;
+var __TURBOPACK__imported__module__8063__4 = __TURBOPACK__imported__module__8063__;
 'use client';
 ;
 ;
@@ -814,9 +817,9 @@ function CompositeRoot(componentProps) {
         highlightItemOnHover,
         relayKeyboardEvent
     ]);
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__3["jsx"])(__TURBOPACK__imported__module__19376__["CompositeRootContext"].Provider, {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__4["jsx"])(__TURBOPACK__imported__module__19376__["CompositeRootContext"].Provider, {
         value: contextValue,
-        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__3["jsx"])(__TURBOPACK__imported__module__56284__["CompositeList"], {
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__4["jsx"])(__TURBOPACK__imported__module__56284__["CompositeList"], {
             elementsRef: elementsRef,
             onMapChange: (newMap)=>{
                 onMapChangeProp?.(newMap);
@@ -833,7 +836,7 @@ var __TURBOPACK__imported__module__43457__ = __turbopack_context__.i(43457);
 var __TURBOPACK__imported__module__67598__ = __turbopack_context__.i(67598);
 var __TURBOPACK__imported__module__68338__1 = __TURBOPACK__imported__module__68338__;
 var __TURBOPACK__imported__module__73650__ = __turbopack_context__.i(73650);
-var __TURBOPACK__imported__module__8063__4 = __TURBOPACK__imported__module__8063__;
+var __TURBOPACK__imported__module__8063__5 = __TURBOPACK__imported__module__8063__;
 'use client';
 ;
 ;
@@ -1005,9 +1008,9 @@ const RadioGroup = /*#__PURE__*/ __TURBOPACK__imported__module__51268__6["forwar
             }
         }
     };
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__4["jsx"])(RadioGroupContext.Provider, {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__5["jsx"])(RadioGroupContext.Provider, {
         value: contextValue,
-        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__4["jsx"])(CompositeRoot, {
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__5["jsx"])(CompositeRoot, {
             render: render,
             className: className,
             style: style,
@@ -1035,21 +1038,21 @@ var __TURBOPACK__imported__module__75157__ = __turbopack_context__.i(75157);
 ;
 ;
 function RadioGroup1({ className, ...props }) {
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__1["jsx"])(RadioGroup, {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__2["jsx"])(RadioGroup, {
         "data-slot": "radio-group",
         className: (0, __TURBOPACK__imported__module__75157__["cn"])("grid w-full gap-2", className),
         ...props
     });
 }
 function RadioGroupItem({ className, ...props }) {
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__1["jsx"])(__TURBOPACK__imported__module__90279__.Root, {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__2["jsx"])(__TURBOPACK__imported__module__90279__.Root, {
         "data-slot": "radio-group-item",
         className: (0, __TURBOPACK__imported__module__75157__["cn"])("group/radio-group-item peer relative flex aspect-square size-4 shrink-0 rounded-full border border-input outline-none after:absolute after:-inset-x-3 after:-inset-y-2 focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 aria-invalid:aria-checked:border-primary dark:bg-input/30 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 data-checked:border-primary data-checked:bg-primary data-checked:text-primary-foreground dark:data-checked:bg-primary", className),
         ...props,
-        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__1["jsx"])(__TURBOPACK__imported__module__90279__.Indicator, {
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__2["jsx"])(__TURBOPACK__imported__module__90279__.Indicator, {
             "data-slot": "radio-group-indicator",
             className: "flex size-4 items-center justify-center",
-            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__1["jsx"])("span", {
+            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__2["jsx"])("span", {
                 className: "absolute top-1/2 left-1/2 size-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary-foreground"
             })
         })
@@ -1104,7 +1107,7 @@ function useSfcData() {
 }
 // MERGED MODULE: [project]/src/features/sfcpr/sfcpr-grid.tsx [app-client] (ecmascript)
 ;
-var __TURBOPACK__imported__module__8063__5 = __TURBOPACK__imported__module__8063__;
+var __TURBOPACK__imported__module__8063__6 = __TURBOPACK__imported__module__8063__;
 var __TURBOPACK__imported__module__51268__10 = __TURBOPACK__imported__module__51268__;
 var __TURBOPACK__imported__module__2776__ = __turbopack_context__.i(2776);
 var __TURBOPACK__imported__module__9279__ = __turbopack_context__.i(9279);
@@ -1162,14 +1165,14 @@ function SfcprGrid({ rowData, isLoading }) {
                     if (!params.data) return null;
                     const detail = params.data.raDetails.find((ra)=>ra.actType === actType);
                     const hasLicence = detail?.hasLicence ?? false;
-                    return hasLicence ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__5["jsx"])("div", {
+                    return hasLicence ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__6["jsx"])("div", {
                         className: "flex items-center justify-center h-full text-emerald-500",
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__5["jsx"])(__TURBOPACK__imported__module__75636__["Check"], {
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__6["jsx"])(__TURBOPACK__imported__module__75636__["Check"], {
                             className: "size-3.5"
                         })
-                    }) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__5["jsx"])("div", {
+                    }) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__6["jsx"])("div", {
                         className: "flex items-center justify-center h-full text-muted-foreground/25",
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__5["jsx"])(__TURBOPACK__imported__module__25133__["Minus"], {
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__6["jsx"])(__TURBOPACK__imported__module__25133__["Minus"], {
                             className: "size-3.5"
                         })
                     });
@@ -1186,14 +1189,14 @@ function SfcprGrid({ rowData, isLoading }) {
             {
                 field: "name",
                 headerName: "Name (EN)",
-                filter: true,
+                filter: "agTextColumnFilter",
                 flex: 2,
                 minWidth: 120
             },
             {
                 field: "nameChi",
                 headerName: "Name (ZH)",
-                filter: true,
+                filter: "agTextColumnFilter",
                 flex: 2,
                 minWidth: 100
             },
@@ -1220,14 +1223,14 @@ function SfcprGrid({ rowData, isLoading }) {
                 flex: 1,
                 minWidth: 100,
                 cellRenderer: (params)=>{
-                    return params.value === "Y" ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__5["jsx"])("div", {
+                    return params.value === "Y" ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__6["jsx"])("div", {
                         className: "flex items-center h-full text-emerald-500",
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__5["jsx"])(__TURBOPACK__imported__module__75636__["Check"], {
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__6["jsx"])(__TURBOPACK__imported__module__75636__["Check"], {
                             className: "size-4"
                         })
-                    }) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__5["jsx"])("div", {
+                    }) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__6["jsx"])("div", {
                         className: "flex items-center h-full text-muted-foreground/40",
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__5["jsx"])(__TURBOPACK__imported__module__25133__["Minus"], {
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__6["jsx"])(__TURBOPACK__imported__module__25133__["Minus"], {
                             className: "size-4"
                         })
                     });
@@ -1241,14 +1244,14 @@ function SfcprGrid({ rowData, isLoading }) {
                 cellRenderer: (params)=>{
                     if (!params.data?.ceref) return null;
                     const type = params.data.isCorp ? "corp" : "indi";
-                    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__5["jsx"])("div", {
+                    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__6["jsx"])("div", {
                         className: "flex items-center justify-center h-full",
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__5["jsx"])("a", {
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__6["jsx"])("a", {
                             href: `https://apps.sfc.hk/publicregWeb/${type}/${params.data.ceref}/details`,
                             target: "_blank",
                             rel: "noopener noreferrer",
                             className: "text-muted-foreground hover:text-foreground transition-colors",
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__5["jsx"])(__TURBOPACK__imported__module__69631__["ExternalLink"], {
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__6["jsx"])(__TURBOPACK__imported__module__69631__["ExternalLink"], {
                                 className: "size-4"
                             })
                         })
@@ -1287,11 +1290,11 @@ function SfcprGrid({ rowData, isLoading }) {
             ]
         };
     }, []);
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__5["jsx"])(__TURBOPACK__imported__module__2776__["AgGridProvider"], {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__6["jsx"])(__TURBOPACK__imported__module__2776__["AgGridProvider"], {
         modules: modules,
-        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__5["jsx"])("div", {
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__6["jsx"])("div", {
             className: "h-full min-h-0 dloomberg-terminal-grid",
-            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__5["jsx"])(__TURBOPACK__imported__module__2776__["AgGridReact"], {
+            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__6["jsx"])(__TURBOPACK__imported__module__2776__["AgGridReact"], {
                 className: "size-full",
                 containerStyle: {
                     height: "100%",
@@ -1338,11 +1341,11 @@ function SfcprGrid({ rowData, isLoading }) {
 ;
 ;
 function RadioOption({ value, id, label }) {
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsxs"])("label", {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__1["jsxs"])("label", {
         htmlFor: id,
         className: "flex items-center gap-2 text-xs cursor-pointer rounded-md border px-3 py-2 has-data-[state=checked]:border-primary/50 has-data-[state=checked]:bg-primary/5 transition-colors",
         children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])(RadioGroupItem, {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__1["jsx"])(RadioGroupItem, {
                 value: value,
                 id: id
             }),
@@ -1374,46 +1377,46 @@ function SfcprPage() {
     }, [
         handleSearch
     ]);
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("div", {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__1["jsx"])("div", {
         className: "size-full flex justify-center overflow-auto",
-        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("div", {
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__1["jsx"])("div", {
             className: "size-full max-w-350 p-4",
-            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsxs"])("div", {
+            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__1["jsxs"])("div", {
                 className: "flex flex-col size-full gap-4",
                 children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsxs"])(__TURBOPACK__imported__module__15288__["Card"], {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__1["jsxs"])(__TURBOPACK__imported__module__15288__["Card"], {
                         className: "shrink-0",
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])(__TURBOPACK__imported__module__15288__["CardHeader"], {
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])(__TURBOPACK__imported__module__15288__["CardTitle"], {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__1["jsx"])(__TURBOPACK__imported__module__15288__["CardHeader"], {
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__1["jsx"])(__TURBOPACK__imported__module__15288__["CardTitle"], {
                                     className: "text-lg",
                                     children: "HKSFC Public Register"
                                 })
                             }),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsxs"])(__TURBOPACK__imported__module__15288__["CardContent"], {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__1["jsxs"])(__TURBOPACK__imported__module__15288__["CardContent"], {
                                 className: "space-y-5",
                                 children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsxs"])("div", {
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__1["jsxs"])("div", {
                                         className: "grid grid-cols-1 sm:grid-cols-2 gap-5",
                                         children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsxs"])("div", {
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__1["jsxs"])("div", {
                                                 className: "space-y-2",
                                                 children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("h3", {
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__1["jsx"])("h3", {
                                                         className: "text-sm font-medium text-muted-foreground",
                                                         children: "Licence / Registration Status"
                                                     }),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsxs"])(RadioGroup1, {
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__1["jsxs"])(RadioGroup1, {
                                                         value: licstatus,
                                                         onValueChange: (v)=>setLicstatus(v),
                                                         className: "gap-2",
                                                         children: [
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])(RadioOption, {
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__1["jsx"])(RadioOption, {
                                                                 value: "active",
                                                                 id: "status-active",
                                                                 label: "Active"
                                                             }),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])(RadioOption, {
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__1["jsx"])(RadioOption, {
                                                                 value: "all",
                                                                 id: "status-active-inactive",
                                                                 label: "Active and inactive"
@@ -1422,29 +1425,29 @@ function SfcprPage() {
                                                     })
                                                 ]
                                             }),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsxs"])("div", {
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__1["jsxs"])("div", {
                                                 className: "space-y-2",
                                                 children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("h3", {
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__1["jsx"])("h3", {
                                                         className: "text-sm font-medium text-muted-foreground",
                                                         children: "Search By"
                                                     }),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsxs"])(RadioGroup1, {
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__1["jsxs"])(RadioGroup1, {
                                                         value: searchby,
                                                         onValueChange: (v)=>setSearchby(v),
                                                         className: "gap-2",
                                                         children: [
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])(RadioOption, {
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__1["jsx"])(RadioOption, {
                                                                 value: "individual",
                                                                 id: "search-individual",
                                                                 label: "Individual name"
                                                             }),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])(RadioOption, {
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__1["jsx"])(RadioOption, {
                                                                 value: "corporation",
                                                                 id: "search-corporation",
                                                                 label: "Corporation name"
                                                             }),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])(RadioOption, {
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__1["jsx"])(RadioOption, {
                                                                 value: "ceref",
                                                                 id: "search-entity-number",
                                                                 label: "Central entity number"
@@ -1455,20 +1458,20 @@ function SfcprPage() {
                                             })
                                         ]
                                     }),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("div", {
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__1["jsx"])("div", {
                                         className: "border-t"
                                     }),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsxs"])("div", {
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__1["jsxs"])("div", {
                                         className: "flex flex-col sm:flex-row gap-2.5",
                                         children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])(__TURBOPACK__imported__module__93479__["Input"], {
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__1["jsx"])(__TURBOPACK__imported__module__93479__["Input"], {
                                                 placeholder: "Enter search term...",
                                                 className: "flex-1",
                                                 value: keyword,
                                                 onChange: (e)=>setKeyword(e.target.value),
                                                 onKeyDown: handleKeyDown
                                             }),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])(__TURBOPACK__imported__module__19455__["Button"], {
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__1["jsx"])(__TURBOPACK__imported__module__19455__["Button"], {
                                                 onClick: handleSearch,
                                                 disabled: isLoading,
                                                 className: "sm:w-auto w-full",
@@ -1480,9 +1483,9 @@ function SfcprPage() {
                             })
                         ]
                     }),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("div", {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__1["jsx"])("div", {
                         className: "flex-1 min-h-150",
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])(SfcprGrid, {
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__1["jsx"])(SfcprGrid, {
                             rowData: rowData,
                             isLoading: isLoading
                         })
@@ -1492,10 +1495,16 @@ function SfcprPage() {
         })
     });
 }
+"use client";
+;
+;
+function Page() {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])(SfcprPage, {});
+}
 __turbopack_context__.s([
-    "SfcprPage",
+    "default",
     0,
-    SfcprPage
-], 4508);
+    Page
+], 50340);
 }),
 ]);
