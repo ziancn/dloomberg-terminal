@@ -692,9 +692,9 @@ function AlertAction({ className, ...props }) {
     });
 }
 ;
-// MERGED MODULE: [project]/node_modules/.pnpm/lucide-react@1.16.0_react@19.2.4/node_modules/lucide-react/dist/esm/icons/contact.mjs [app-client] (ecmascript) <export default as Contact>
+// MERGED MODULE: [project]/node_modules/.pnpm/lucide-react@1.16.0_react@19.2.4/node_modules/lucide-react/dist/esm/icons/chart-candlestick.mjs [app-client] (ecmascript) <export default as ChartCandlestick>
 ;
-// MERGED MODULE: [project]/node_modules/.pnpm/lucide-react@1.16.0_react@19.2.4/node_modules/lucide-react/dist/esm/icons/contact.mjs [app-client] (ecmascript)
+// MERGED MODULE: [project]/node_modules/.pnpm/lucide-react@1.16.0_react@19.2.4/node_modules/lucide-react/dist/esm/icons/chart-candlestick.mjs [app-client] (ecmascript)
 ;
 /**
  * @license lucide-react v1.16.0 - ISC
@@ -704,6 +704,73 @@ function AlertAction({ className, ...props }) {
  */ var __TURBOPACK__imported__module__67022__ = __turbopack_context__.i(67022);
 ;
 const __iconNode = [
+    [
+        "path",
+        {
+            d: "M9 5v4",
+            key: "14uxtq"
+        }
+    ],
+    [
+        "rect",
+        {
+            width: "4",
+            height: "6",
+            x: "7",
+            y: "9",
+            rx: "1",
+            key: "f4fvz0"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M9 15v2",
+            key: "r5rk32"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M17 3v2",
+            key: "1l2re6"
+        }
+    ],
+    [
+        "rect",
+        {
+            width: "4",
+            height: "8",
+            x: "15",
+            y: "5",
+            rx: "1",
+            key: "z38je5"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M17 13v3",
+            key: "5l0wba"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M3 3v16a2 2 0 0 0 2 2h16",
+            key: "c24i48"
+        }
+    ]
+];
+const ChartCandlestick = (0, __TURBOPACK__imported__module__67022__["default"])("chart-candlestick", __iconNode);
+;
+// MERGED MODULE: [project]/node_modules/.pnpm/lucide-react@1.16.0_react@19.2.4/node_modules/lucide-react/dist/esm/icons/contact.mjs [app-client] (ecmascript) <export default as Contact>
+;
+// MERGED MODULE: [project]/node_modules/.pnpm/lucide-react@1.16.0_react@19.2.4/node_modules/lucide-react/dist/esm/icons/contact.mjs [app-client] (ecmascript)
+;
+var __TURBOPACK__imported__module__67022__1 = __TURBOPACK__imported__module__67022__;
+;
+const __iconNode1 = [
     [
         "path",
         {
@@ -746,15 +813,15 @@ const __iconNode = [
         }
     ]
 ];
-const Contact = (0, __TURBOPACK__imported__module__67022__["default"])("contact", __iconNode);
+const Contact = (0, __TURBOPACK__imported__module__67022__1["default"])("contact", __iconNode1);
 ;
 // MERGED MODULE: [project]/node_modules/.pnpm/lucide-react@1.16.0_react@19.2.4/node_modules/lucide-react/dist/esm/icons/trending-up-down.mjs [app-client] (ecmascript) <export default as TrendingUpDown>
 ;
 // MERGED MODULE: [project]/node_modules/.pnpm/lucide-react@1.16.0_react@19.2.4/node_modules/lucide-react/dist/esm/icons/trending-up-down.mjs [app-client] (ecmascript)
 ;
-var __TURBOPACK__imported__module__67022__1 = __TURBOPACK__imported__module__67022__;
+var __TURBOPACK__imported__module__67022__2 = __TURBOPACK__imported__module__67022__;
 ;
-const __iconNode1 = [
+const __iconNode2 = [
     [
         "path",
         {
@@ -784,16 +851,16 @@ const __iconNode1 = [
         }
     ]
 ];
-const TrendingUpDown = (0, __TURBOPACK__imported__module__67022__1["default"])("trending-up-down", __iconNode1);
+const TrendingUpDown = (0, __TURBOPACK__imported__module__67022__2["default"])("trending-up-down", __iconNode2);
 ;
 var __TURBOPACK__imported__module__69631__ = __turbopack_context__.i(69631);
 // MERGED MODULE: [project]/node_modules/.pnpm/lucide-react@1.16.0_react@19.2.4/node_modules/lucide-react/dist/esm/icons/triangle-alert.mjs [app-client] (ecmascript) <export default as AlertTriangle>
 ;
 // MERGED MODULE: [project]/node_modules/.pnpm/lucide-react@1.16.0_react@19.2.4/node_modules/lucide-react/dist/esm/icons/triangle-alert.mjs [app-client] (ecmascript)
 ;
-var __TURBOPACK__imported__module__67022__2 = __TURBOPACK__imported__module__67022__;
+var __TURBOPACK__imported__module__67022__3 = __TURBOPACK__imported__module__67022__;
 ;
-const __iconNode2 = [
+const __iconNode3 = [
     [
         "path",
         {
@@ -816,7 +883,7 @@ const __iconNode2 = [
         }
     ]
 ];
-const TriangleAlert = (0, __TURBOPACK__imported__module__67022__2["default"])("triangle-alert", __iconNode2);
+const TriangleAlert = (0, __TURBOPACK__imported__module__67022__3["default"])("triangle-alert", __iconNode3);
 ;
 "use client";
 ;
@@ -858,6 +925,12 @@ function StartPage() {
             title: "SFCPR",
             subtitle: "HKSFC public register of licensed entities",
             url: "/sfcpr"
+        },
+        {
+            icon: ChartCandlestick,
+            title: "LETF",
+            subtitle: "Leveraged ETF cummulative decay analysis",
+            url: "/letf"
         }
     ];
     const githubRepos = [
@@ -873,7 +946,7 @@ function StartPage() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("div", {
         className: "flex h-full flex-col overflow-y-auto",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsxs"])("div", {
-            className: "mx-auto flex justify-center w-full max-w-6xl flex-1 flex-col px-8 py-14",
+            className: "mx-auto flex justify-center w-full max-w-7xl flex-1 flex-col px-8 py-14",
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("div", {
                     className: "mb-8",
@@ -902,7 +975,7 @@ function StartPage() {
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("main", {
                     className: "flex-1",
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsxs"])("div", {
-                        className: "grid grid-cols-1 gap-10 md:grid-cols-12",
+                        className: "grid grid-cols-1 gap-10 md:grid-cols-10",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsxs"])("div", {
                                 className: "md:col-span-5",
@@ -974,7 +1047,7 @@ function StartPage() {
                                 ]
                             }),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsxs"])("div", {
-                                className: "md:col-span-7",
+                                className: "md:col-span-5",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])("h2", {
                                         className: "mb-4 text-xl font-medium",

@@ -2779,7 +2779,8 @@ __turbopack_context__.s([
     FieldRoot
 ], 22789);
 }),
-58373, ((__turbopack_context__) => {
+58373, 90878, 
+((__turbopack_context__) => {
 "use strict";
 
 // MERGED MODULE: [project]/node_modules/.pnpm/@base-ui+react@1.4.1_@types_bf6a27bfe7c944d33b05ef5c074fb210/node_modules/@base-ui/react/esm/field/label/FieldLabel.js [app-client] (ecmascript)
@@ -2879,6 +2880,11 @@ function focusElementWithVisible(element) {
         focusVisible: true
     });
 }
+__turbopack_context__.s([
+    "useLabel",
+    0,
+    useLabel
+], 90878);
 'use client';
 ;
 ;
@@ -3607,11 +3613,12 @@ var __TURBOPACK__imported__module__75157__ = __turbopack_context__.i(75157);
 ;
 ;
 ;
-function Input1({ className, type, ...props }) {
+function Input1({ className, type, size = "default", ...props }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__8063__["jsx"])(Input, {
         type: type,
         "data-slot": "input",
-        className: (0, __TURBOPACK__imported__module__75157__["cn"])("h-8 w-full min-w-0 rounded-none border border-input bg-transparent px-2.5 py-1 text-xs transition-colors outline-none file:inline-flex file:h-6 file:border-0 file:bg-transparent file:text-xs file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-1 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:cursor-not-allowed disabled:bg-input/50 disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-1 aria-invalid:ring-destructive/20 md:text-xs dark:bg-input/30 dark:disabled:bg-input/80 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40", className),
+        "data-size": size,
+        className: (0, __TURBOPACK__imported__module__75157__["cn"])("w-full min-w-0 rounded-none border border-input bg-transparent px-2.5 py-1 text-xs transition-colors outline-none file:inline-flex file:h-6 file:border-0 file:bg-transparent file:text-xs file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-1 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:cursor-not-allowed disabled:bg-input/50 disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-1 aria-invalid:ring-destructive/20 md:text-xs dark:bg-input/30 dark:disabled:bg-input/80 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40", "data-[size=default]:h-8 data-[size=sm]:h-7", className),
         ...props
     });
 }
@@ -3622,21 +3629,14 @@ __turbopack_context__.s([
     Input1
 ], 93479);
 }),
-79532, 72746, 
-((__turbopack_context__) => {
+72746, ((__turbopack_context__) => {
 "use strict";
 
-// MERGED MODULE: [project]/node_modules/.pnpm/@base-ui+react@1.4.1_@types_bf6a27bfe7c944d33b05ef5c074fb210/node_modules/@base-ui/react/esm/internals/composite/list/useCompositeListItem.js [app-client] (ecmascript)
-;
+var __TURBOPACK__imported__module__96746__ = /*#__PURE__*/ __turbopack_context__.i(96746);
 var __TURBOPACK__imported__module__51268__ = __turbopack_context__.i(51268);
-var __TURBOPACK__imported__module__91900__ = __turbopack_context__.i(91900);
-// MERGED MODULE: [project]/node_modules/.pnpm/@base-ui+react@1.4.1_@types_bf6a27bfe7c944d33b05ef5c074fb210/node_modules/@base-ui/react/esm/internals/composite/list/CompositeListContext.js [app-client] (ecmascript)
-;
-var __TURBOPACK__imported__module__96746__ = __turbopack_context__.i(96746);
-var __TURBOPACK__imported__module__51268__1 = __TURBOPACK__imported__module__51268__;
 'use client';
 ;
-const CompositeListContext = /*#__PURE__*/ __TURBOPACK__imported__module__51268__1["createContext"]({
+const CompositeListContext = /*#__PURE__*/ __TURBOPACK__imported__module__51268__["createContext"]({
     register: ()=>{},
     unregister: ()=>{},
     subscribeMapChange: ()=>{
@@ -3652,7 +3652,7 @@ const CompositeListContext = /*#__PURE__*/ __TURBOPACK__imported__module__51268_
 if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
 ;
 function useCompositeListContext() {
-    return __TURBOPACK__imported__module__51268__1["useContext"](CompositeListContext);
+    return __TURBOPACK__imported__module__51268__["useContext"](CompositeListContext);
 }
 __turbopack_context__.s([
     "CompositeListContext",
@@ -3661,7 +3661,14 @@ __turbopack_context__.s([
     "useCompositeListContext",
     0,
     useCompositeListContext
-], 72746);
+]);
+}),
+79532, ((__turbopack_context__) => {
+"use strict";
+
+var __TURBOPACK__imported__module__51268__ = __turbopack_context__.i(51268);
+var __TURBOPACK__imported__module__91900__ = __turbopack_context__.i(91900);
+var __TURBOPACK__imported__module__72746__ = __turbopack_context__.i(72746);
 'use client';
 ;
 ;
@@ -3673,7 +3680,7 @@ let IndexGuessBehavior = /*#__PURE__*/ function(IndexGuessBehavior) {
 }({});
 function useCompositeListItem(params = {}) {
     const { label, metadata, textRef, indexGuessBehavior, index: externalIndex } = params;
-    const { register, unregister, subscribeMapChange, elementsRef, labelsRef, nextIndexRef } = useCompositeListContext();
+    const { register, unregister, subscribeMapChange, elementsRef, labelsRef, nextIndexRef } = (0, __TURBOPACK__imported__module__72746__["useCompositeListContext"])();
     const indexRef = __TURBOPACK__imported__module__51268__["useRef"](-1);
     const [index, setIndex] = __TURBOPACK__imported__module__51268__["useState"](externalIndex ?? (indexGuessBehavior === IndexGuessBehavior.GuessFromOrder ? ()=>{
         if (indexRef.current === -1) {
@@ -3742,10 +3749,13 @@ function useCompositeListItem(params = {}) {
     ]);
 }
 __turbopack_context__.s([
+    "IndexGuessBehavior",
+    0,
+    IndexGuessBehavior,
     "useCompositeListItem",
     0,
     useCompositeListItem
-], 79532);
+]);
 }),
 25909, ((__turbopack_context__) => {
 "use strict";
@@ -3946,85 +3956,5 @@ __turbopack_context__.s([
     0,
     CompositeList
 ]);
-}),
-4438, ((__turbopack_context__) => {
-"use strict";
-
-// MERGED MODULE: [project]/node_modules/.pnpm/@base-ui+react@1.4.1_@types_bf6a27bfe7c944d33b05ef5c074fb210/node_modules/@base-ui/react/esm/internals/composite/item/CompositeItem.js [app-client] (ecmascript)
-;
-var __TURBOPACK__imported__module__24659__ = __turbopack_context__.i(24659);
-var __TURBOPACK__imported__module__19996__ = __turbopack_context__.i(19996);
-// MERGED MODULE: [project]/node_modules/.pnpm/@base-ui+react@1.4.1_@types_bf6a27bfe7c944d33b05ef5c074fb210/node_modules/@base-ui/react/esm/internals/composite/item/useCompositeItem.js [app-client] (ecmascript)
-;
-var __TURBOPACK__imported__module__51268__ = __turbopack_context__.i(51268);
-var __TURBOPACK__imported__module__90741__ = __turbopack_context__.i(90741);
-var __TURBOPACK__imported__module__19376__ = __turbopack_context__.i(19376);
-var __TURBOPACK__imported__module__79532__ = __turbopack_context__.i(79532);
-'use client';
-;
-;
-;
-;
-function useCompositeItem(params = {}) {
-    const { highlightItemOnHover, highlightedIndex, onHighlightedIndexChange } = (0, __TURBOPACK__imported__module__19376__["useCompositeRootContext"])();
-    const { ref, index } = (0, __TURBOPACK__imported__module__79532__["useCompositeListItem"])(params);
-    const isHighlighted = highlightedIndex === index;
-    const itemRef = __TURBOPACK__imported__module__51268__["useRef"](null);
-    const mergedRef = (0, __TURBOPACK__imported__module__90741__["useMergedRefs"])(ref, itemRef);
-    const compositeProps = __TURBOPACK__imported__module__51268__["useMemo"](()=>({
-            tabIndex: isHighlighted ? 0 : -1,
-            onFocus () {
-                onHighlightedIndexChange(index);
-            },
-            onMouseMove () {
-                const item = itemRef.current;
-                if (!highlightItemOnHover || !item) {
-                    return;
-                }
-                const disabled = item.hasAttribute('disabled') || item.ariaDisabled === 'true';
-                if (!isHighlighted && !disabled) {
-                    item.focus();
-                }
-            }
-        }), [
-        isHighlighted,
-        onHighlightedIndexChange,
-        index,
-        highlightItemOnHover
-    ]);
-    return {
-        compositeProps,
-        compositeRef: mergedRef,
-        index
-    };
-}
-'use client';
-;
-;
-;
-function CompositeItem(componentProps) {
-    const { render, className, style, state = __TURBOPACK__imported__module__24659__["EMPTY_OBJECT"], props = __TURBOPACK__imported__module__24659__["EMPTY_ARRAY"], refs = __TURBOPACK__imported__module__24659__["EMPTY_ARRAY"], metadata, stateAttributesMapping, tag = 'div', ...elementProps } = componentProps;
-    const { compositeProps, compositeRef } = useCompositeItem({
-        metadata
-    });
-    return (0, __TURBOPACK__imported__module__19996__["useRenderElement"])(tag, componentProps, {
-        state,
-        ref: [
-            ...refs,
-            compositeRef
-        ],
-        props: [
-            compositeProps,
-            ...props,
-            elementProps
-        ],
-        stateAttributesMapping
-    });
-}
-__turbopack_context__.s([
-    "CompositeItem",
-    0,
-    CompositeItem
-], 4438);
 }),
 ]);

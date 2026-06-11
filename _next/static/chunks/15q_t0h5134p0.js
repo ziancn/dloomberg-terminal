@@ -407,16 +407,10 @@ __turbopack_context__.s([
     getReactElementRef
 ], 27276);
 }),
-9226, 24659, 
-76418, 
-26533, 
-28275, 
-((__turbopack_context__) => {
+9226, ((__turbopack_context__) => {
 "use strict";
 
-// MERGED MODULE: [project]/node_modules/.pnpm/@base-ui+utils@0.2.8_@types_c9551430b09515194bf4d31e244bbed7/node_modules/@base-ui/utils/esm/warn.js [app-client] (ecmascript)
-;
-var __TURBOPACK__imported__module__96746__ = __turbopack_context__.i(96746);
+var __TURBOPACK__imported__module__96746__ = /*#__PURE__*/ __turbopack_context__.i(96746);
 let set;
 if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
 ;
@@ -428,9 +422,11 @@ __turbopack_context__.s([
     "warn",
     0,
     warn
-], 9226);
-// MERGED MODULE: [project]/node_modules/.pnpm/@base-ui+utils@0.2.8_@types_c9551430b09515194bf4d31e244bbed7/node_modules/@base-ui/utils/esm/empty.js [app-client] (ecmascript)
-;
+]);
+}),
+24659, ((__turbopack_context__) => {
+"use strict";
+
 function NOOP() {}
 const EMPTY_ARRAY = Object.freeze([]);
 const EMPTY_OBJECT = Object.freeze({});
@@ -444,7 +440,13 @@ __turbopack_context__.s([
     "NOOP",
     0,
     NOOP
-], 24659);
+]);
+}),
+76418, 26533, 
+28275, 
+((__turbopack_context__) => {
+"use strict";
+
 // MERGED MODULE: [project]/node_modules/.pnpm/@base-ui+react@1.4.1_@types_bf6a27bfe7c944d33b05ef5c074fb210/node_modules/@base-ui/react/esm/internals/getStateAttributesProps.js [app-client] (ecmascript)
 ;
 function getStateAttributesProps(state, customMapping) {

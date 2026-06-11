@@ -171,21 +171,7 @@ if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
 function useRadioGroupContext() {
     return __TURBOPACK__imported__module__51268__3["useContext"](RadioGroupContext);
 }
-// MERGED MODULE: [project]/node_modules/.pnpm/@base-ui+react@1.4.1_@types_bf6a27bfe7c944d33b05ef5c074fb210/node_modules/@base-ui/react/esm/internals/serializeValue.js [app-client] (ecmascript)
-;
-function serializeValue(value) {
-    if (value == null) {
-        return '';
-    }
-    if (typeof value === 'string') {
-        return value;
-    }
-    try {
-        return JSON.stringify(value);
-    } catch  {
-        return String(value);
-    }
-}
+var __TURBOPACK__imported__module__34674__ = __turbopack_context__.i(34674);
 // MERGED MODULE: [project]/node_modules/.pnpm/@base-ui+react@1.4.1_@types_bf6a27bfe7c944d33b05ef5c074fb210/node_modules/@base-ui/react/esm/radio/root/RadioRootContext.js [app-client] (ecmascript)
 ;
 var __TURBOPACK__imported__module__96746__2 = __TURBOPACK__imported__module__96746__;
@@ -246,7 +232,7 @@ const RadioRoot = /*#__PURE__*/ __TURBOPACK__imported__module__51268__1["forward
     const required = requiredGroup || requiredProp;
     const form = formGroup;
     const checked = groupContext ? checkedValue === value : value === '';
-    const serializedValue = __TURBOPACK__imported__module__51268__1["useMemo"](()=>serializeValue(value), [
+    const serializedValue = __TURBOPACK__imported__module__51268__1["useMemo"](()=>(0, __TURBOPACK__imported__module__34674__["serializeValue"])(value), [
         value
     ]);
     const radioRef = __TURBOPACK__imported__module__51268__1["useRef"](null);

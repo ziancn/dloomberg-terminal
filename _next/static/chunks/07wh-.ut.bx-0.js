@@ -555,7 +555,8 @@ __turbopack_context__.s([
 const API = {
     shortSellTurnover: "/hkex/short-sell-turnover",
     status: "/status",
-    sfcSearch: "/sfc/search"
+    sfcSearch: "/sfc/search",
+    letf: "/letf"
 };
 __turbopack_context__.s([
     "API",
@@ -563,27 +564,9 @@ __turbopack_context__.s([
     API
 ], 8069);
 }),
-19455, 92615, 
-32787, 
-91900, 
-19376, 
-81833, 
-((__turbopack_context__) => {
+92615, ((__turbopack_context__) => {
 "use strict";
 
-// MERGED MODULE: [project]/src/components/ui/button.tsx [app-client] (ecmascript)
-;
-var __TURBOPACK__imported__module__8063__ = __turbopack_context__.i(8063);
-// MERGED MODULE: [project]/node_modules/.pnpm/@base-ui+react@1.4.1_@types_bf6a27bfe7c944d33b05ef5c074fb210/node_modules/@base-ui/react/esm/button/Button.js [app-client] (ecmascript)
-;
-var __TURBOPACK__imported__module__96746__ = __turbopack_context__.i(96746);
-var __TURBOPACK__imported__module__51268__ = __turbopack_context__.i(51268);
-// MERGED MODULE: [project]/node_modules/.pnpm/@base-ui+react@1.4.1_@types_bf6a27bfe7c944d33b05ef5c074fb210/node_modules/@base-ui/react/esm/internals/use-button/useButton.js [app-client] (ecmascript)
-;
-var __TURBOPACK__imported__module__96746__1 = __TURBOPACK__imported__module__96746__;
-var __TURBOPACK__imported__module__51268__1 = __TURBOPACK__imported__module__51268__;
-// MERGED MODULE: [project]/node_modules/.pnpm/@floating-ui+utils@0.2.11/node_modules/@floating-ui/utils/dist/floating-ui.utils.dom.mjs [app-client] (ecmascript)
-;
 function hasWindow() {
     return typeof window !== 'undefined';
 }
@@ -796,20 +779,25 @@ __turbopack_context__.s([
     "isWebKit",
     0,
     isWebKit
-], 92615);
+]);
+}),
+32787, 91900, 
+((__turbopack_context__) => {
+"use strict";
+
 // MERGED MODULE: [project]/node_modules/.pnpm/@base-ui+utils@0.2.8_@types_c9551430b09515194bf4d31e244bbed7/node_modules/@base-ui/utils/esm/useStableCallback.js [app-client] (ecmascript)
 ;
-var __TURBOPACK__imported__module__96746__2 = __TURBOPACK__imported__module__96746__;
-var __TURBOPACK__imported__module__51268__2 = __TURBOPACK__imported__module__51268__;
+var __TURBOPACK__imported__module__96746__ = __turbopack_context__.i(96746);
+var __TURBOPACK__imported__module__51268__ = __turbopack_context__.i(51268);
 var __TURBOPACK__imported__module__67452__ = __turbopack_context__.i(67452);
 'use client';
 ;
 ;
 // https://github.com/mui/material-ui/issues/41190#issuecomment-2040873379
-const useInsertionEffect = __TURBOPACK__imported__module__51268__2[`useInsertionEffect${Math.random().toFixed(1)}`.slice(0, -3)];
+const useInsertionEffect = __TURBOPACK__imported__module__51268__[`useInsertionEffect${Math.random().toFixed(1)}`.slice(0, -3)];
 const useSafeInsertionEffect = // React 17 doesn't have useInsertionEffect.
 useInsertionEffect && // Preact replaces useInsertionEffect with useLayoutEffect and fires too late.
-useInsertionEffect !== __TURBOPACK__imported__module__51268__2.useLayoutEffect ? useInsertionEffect : (fn)=>fn();
+useInsertionEffect !== __TURBOPACK__imported__module__51268__.useLayoutEffect ? useInsertionEffect : (fn)=>fn();
 function useStableCallback(callback) {
     const stable = (0, __TURBOPACK__imported__module__67452__["useRefWithInit"])(createStableCallback).current;
     stable.next = callback;
@@ -838,30 +826,50 @@ __turbopack_context__.s([
 ], 32787);
 // MERGED MODULE: [project]/node_modules/.pnpm/@base-ui+utils@0.2.8_@types_c9551430b09515194bf4d31e244bbed7/node_modules/@base-ui/utils/esm/useIsoLayoutEffect.js [app-client] (ecmascript)
 ;
-var __TURBOPACK__imported__module__51268__3 = __TURBOPACK__imported__module__51268__;
+var __TURBOPACK__imported__module__51268__1 = __TURBOPACK__imported__module__51268__;
 'use client';
 ;
 const noop = ()=>{};
-const useIsoLayoutEffect = typeof document !== 'undefined' ? __TURBOPACK__imported__module__51268__3["useLayoutEffect"] : noop;
+const useIsoLayoutEffect = typeof document !== 'undefined' ? __TURBOPACK__imported__module__51268__1["useLayoutEffect"] : noop;
 __turbopack_context__.s([
     "useIsoLayoutEffect",
     0,
     useIsoLayoutEffect
 ], 91900);
+}),
+19455, 19376, 
+81833, 
+((__turbopack_context__) => {
+"use strict";
+
+// MERGED MODULE: [project]/src/components/ui/button.tsx [app-client] (ecmascript)
+;
+var __TURBOPACK__imported__module__8063__ = __turbopack_context__.i(8063);
+// MERGED MODULE: [project]/node_modules/.pnpm/@base-ui+react@1.4.1_@types_bf6a27bfe7c944d33b05ef5c074fb210/node_modules/@base-ui/react/esm/button/Button.js [app-client] (ecmascript)
+;
+var __TURBOPACK__imported__module__96746__ = __turbopack_context__.i(96746);
+var __TURBOPACK__imported__module__51268__ = __turbopack_context__.i(51268);
+// MERGED MODULE: [project]/node_modules/.pnpm/@base-ui+react@1.4.1_@types_bf6a27bfe7c944d33b05ef5c074fb210/node_modules/@base-ui/react/esm/internals/use-button/useButton.js [app-client] (ecmascript)
+;
+var __TURBOPACK__imported__module__96746__1 = __TURBOPACK__imported__module__96746__;
+var __TURBOPACK__imported__module__51268__1 = __TURBOPACK__imported__module__51268__;
+var __TURBOPACK__imported__module__92615__ = __turbopack_context__.i(92615);
+var __TURBOPACK__imported__module__32787__ = __turbopack_context__.i(32787);
+var __TURBOPACK__imported__module__91900__ = __turbopack_context__.i(91900);
 var __TURBOPACK__imported__module__84028__ = __turbopack_context__.i(84028);
 // MERGED MODULE: [project]/node_modules/.pnpm/@base-ui+react@1.4.1_@types_bf6a27bfe7c944d33b05ef5c074fb210/node_modules/@base-ui/react/esm/internals/composite/root/CompositeRootContext.js [app-client] (ecmascript)
 ;
-var __TURBOPACK__imported__module__96746__3 = __TURBOPACK__imported__module__96746__;
+var __TURBOPACK__imported__module__96746__2 = __TURBOPACK__imported__module__96746__;
 var __TURBOPACK__imported__module__16174__ = __turbopack_context__.i(16174);
-var __TURBOPACK__imported__module__51268__4 = __TURBOPACK__imported__module__51268__;
+var __TURBOPACK__imported__module__51268__2 = __TURBOPACK__imported__module__51268__;
 'use client';
 ;
 ;
-const CompositeRootContext = /*#__PURE__*/ __TURBOPACK__imported__module__51268__4["createContext"](undefined);
+const CompositeRootContext = /*#__PURE__*/ __TURBOPACK__imported__module__51268__2["createContext"](undefined);
 if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
 ;
 function useCompositeRootContext(optional = false) {
-    const context = __TURBOPACK__imported__module__51268__4["useContext"](CompositeRootContext);
+    const context = __TURBOPACK__imported__module__51268__2["useContext"](CompositeRootContext);
     if (context === undefined && !optional) {
         throw new Error(("TURBOPACK compile-time falsy", 0) ? "TURBOPACK unreachable" : (0, __TURBOPACK__imported__module__16174__["default"])(16));
     }
@@ -877,7 +885,7 @@ __turbopack_context__.s([
 ], 19376);
 // MERGED MODULE: [project]/node_modules/.pnpm/@base-ui+react@1.4.1_@types_bf6a27bfe7c944d33b05ef5c074fb210/node_modules/@base-ui/react/esm/utils/useFocusableWhenDisabled.js [app-client] (ecmascript)
 ;
-var __TURBOPACK__imported__module__51268__5 = __TURBOPACK__imported__module__51268__;
+var __TURBOPACK__imported__module__51268__3 = __TURBOPACK__imported__module__51268__;
 'use client';
 ;
 function useFocusableWhenDisabled(parameters) {
@@ -886,7 +894,7 @@ function useFocusableWhenDisabled(parameters) {
     const isNonFocusableComposite = composite && focusableWhenDisabled === false;
     // we can't explicitly assign `undefined` to any of these props because it
     // would otherwise prevent subsequently merged props from setting them
-    const props = __TURBOPACK__imported__module__51268__5["useMemo"](()=>{
+    const props = __TURBOPACK__imported__module__51268__3["useMemo"](()=>{
         const additionalProps = {
             // allow Tabbing away from focusableWhenDisabled elements
             onKeyDown (event) {
@@ -962,7 +970,7 @@ function useButton(parameters = {}) {
         focusableWhenDisabledProps.disabled,
         isCompositeItem
     ]);
-    useIsoLayoutEffect(updateDisabled, [
+    (0, __TURBOPACK__imported__module__91900__["useIsoLayoutEffect"])(updateDisabled, [
         updateDisabled
     ]);
     const getButtonProps = __TURBOPACK__imported__module__51268__1["useCallback"]((externalProps = {})=>{
@@ -1060,7 +1068,7 @@ function useButton(parameters = {}) {
         isCompositeItem,
         isNativeButton
     ]);
-    const buttonRef = useStableCallback((element)=>{
+    const buttonRef = (0, __TURBOPACK__imported__module__32787__["useStableCallback"])((element)=>{
         elementRef.current = element;
         updateDisabled();
     });
@@ -1070,7 +1078,7 @@ function useButton(parameters = {}) {
     };
 }
 function isButtonElement(elem) {
-    return isHTMLElement(elem) && elem.tagName === 'BUTTON';
+    return (0, __TURBOPACK__imported__module__92615__["isHTMLElement"])(elem) && elem.tagName === 'BUTTON';
 }
 function isValidLinkElement(elem) {
     return Boolean(elem?.tagName === 'A' && elem?.href);
@@ -1185,5 +1193,85 @@ __turbopack_context__.s([
     0,
     Check
 ]);
+}),
+4438, ((__turbopack_context__) => {
+"use strict";
+
+// MERGED MODULE: [project]/node_modules/.pnpm/@base-ui+react@1.4.1_@types_bf6a27bfe7c944d33b05ef5c074fb210/node_modules/@base-ui/react/esm/internals/composite/item/CompositeItem.js [app-client] (ecmascript)
+;
+var __TURBOPACK__imported__module__24659__ = __turbopack_context__.i(24659);
+var __TURBOPACK__imported__module__19996__ = __turbopack_context__.i(19996);
+// MERGED MODULE: [project]/node_modules/.pnpm/@base-ui+react@1.4.1_@types_bf6a27bfe7c944d33b05ef5c074fb210/node_modules/@base-ui/react/esm/internals/composite/item/useCompositeItem.js [app-client] (ecmascript)
+;
+var __TURBOPACK__imported__module__51268__ = __turbopack_context__.i(51268);
+var __TURBOPACK__imported__module__90741__ = __turbopack_context__.i(90741);
+var __TURBOPACK__imported__module__19376__ = __turbopack_context__.i(19376);
+var __TURBOPACK__imported__module__79532__ = __turbopack_context__.i(79532);
+'use client';
+;
+;
+;
+;
+function useCompositeItem(params = {}) {
+    const { highlightItemOnHover, highlightedIndex, onHighlightedIndexChange } = (0, __TURBOPACK__imported__module__19376__["useCompositeRootContext"])();
+    const { ref, index } = (0, __TURBOPACK__imported__module__79532__["useCompositeListItem"])(params);
+    const isHighlighted = highlightedIndex === index;
+    const itemRef = __TURBOPACK__imported__module__51268__["useRef"](null);
+    const mergedRef = (0, __TURBOPACK__imported__module__90741__["useMergedRefs"])(ref, itemRef);
+    const compositeProps = __TURBOPACK__imported__module__51268__["useMemo"](()=>({
+            tabIndex: isHighlighted ? 0 : -1,
+            onFocus () {
+                onHighlightedIndexChange(index);
+            },
+            onMouseMove () {
+                const item = itemRef.current;
+                if (!highlightItemOnHover || !item) {
+                    return;
+                }
+                const disabled = item.hasAttribute('disabled') || item.ariaDisabled === 'true';
+                if (!isHighlighted && !disabled) {
+                    item.focus();
+                }
+            }
+        }), [
+        isHighlighted,
+        onHighlightedIndexChange,
+        index,
+        highlightItemOnHover
+    ]);
+    return {
+        compositeProps,
+        compositeRef: mergedRef,
+        index
+    };
+}
+'use client';
+;
+;
+;
+function CompositeItem(componentProps) {
+    const { render, className, style, state = __TURBOPACK__imported__module__24659__["EMPTY_OBJECT"], props = __TURBOPACK__imported__module__24659__["EMPTY_ARRAY"], refs = __TURBOPACK__imported__module__24659__["EMPTY_ARRAY"], metadata, stateAttributesMapping, tag = 'div', ...elementProps } = componentProps;
+    const { compositeProps, compositeRef } = useCompositeItem({
+        metadata
+    });
+    return (0, __TURBOPACK__imported__module__19996__["useRenderElement"])(tag, componentProps, {
+        state,
+        ref: [
+            ...refs,
+            compositeRef
+        ],
+        props: [
+            compositeProps,
+            ...props,
+            elementProps
+        ],
+        stateAttributesMapping
+    });
+}
+__turbopack_context__.s([
+    "CompositeItem",
+    0,
+    CompositeItem
+], 4438);
 }),
 ]);
