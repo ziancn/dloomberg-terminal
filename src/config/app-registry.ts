@@ -29,6 +29,12 @@ export const appRegistry: Feature[] = [
     description: "HKSFC public register of licensed entities",
   },
   {
+    id: "letf",
+    label: "LETF",
+    path: "/letf",
+    description: "Leveraged ETF cummulative decay analysis",
+  },
+  {
     id: "set",
     label: "SET",
     path: "/settings",

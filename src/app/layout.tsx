@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter, Noto_Sans } from "next/font/google";
+import { Faster_One, Geist, Geist_Mono, Inter, Noto_Sans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { BackendStatusProvider } from "@/components/backend-status-provider";
 import { TerminalChrome } from "@/features/shell/terminal-chrome";
 
 const notoSans = Noto_Sans({subsets:['latin'],variable:'--font-sans'});
+
+const fasterOne = Faster_One({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-faster-one",
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,7 +36,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn("h-full", "dark", "antialiased", geistSans.variable, geistMono.variable, "font-sans", notoSans.variable)}
+      className={cn("h-full", "dark", "antialiased", geistSans.variable, geistMono.variable, "font-sans", notoSans.variable, fasterOne.variable)}
     >
       <body className="min-h-full flex flex-col">
         <BackendStatusProvider>

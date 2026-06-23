@@ -13,6 +13,7 @@ import {
 import { Alert, AlertDescription } from "@/components/ui/alert"
 
 import {
+  ChartCandlestick,
   Contact,
   TrendingUpDown,
   ExternalLink,
@@ -70,6 +71,7 @@ export function StartPage() {
   const recentFunctions: ActionItem[] = [
     { icon: TrendingUpDown, title: "HKSS", subtitle: "HKEX short selling turnover today", url: "/hkss" },
     { icon: Contact, title: "SFCPR", subtitle: "HKSFC public register of licensed entities", url: "/sfcpr" },
+    { icon: ChartCandlestick, title: "LETF", subtitle: "Leveraged ETF cummulative decay analysis", url: "/letf" },
   ]
 
   const githubRepos: GithubRepo[] = [
@@ -79,11 +81,13 @@ export function StartPage() {
 
   return (
     <div className="flex h-full flex-col overflow-y-auto">
-      <div className="mx-auto flex justify-center w-full max-w-6xl flex-1 flex-col px-8 py-14">
+      <div className="mx-auto flex justify-center w-full max-w-7xl flex-1 flex-col px-8 py-14">
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-3xl font-semibold tracking-tight">
-            <p>Dloomberg Terminal</p>
+            <p>
+              <span className="font-(family-name:--font-faster-one) text-[2.4rem] font-light">D</span>loomberg Terminal
+            </p>
             <p className="text-xl text-muted-foreground uppercase">Anywhere</p>
           </h1>
         </div>
@@ -92,7 +96,7 @@ export function StartPage() {
 
         {/* Main Grid */}
         <main className="flex-1">
-          <div className="grid grid-cols-1 gap-10 md:grid-cols-12">
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-10">
             {/* Left Column: Start */}
             <div className="md:col-span-5">
               <h2 className="mb-4 text-xl font-medium">Get Started</h2>
@@ -147,7 +151,7 @@ export function StartPage() {
             </div>
 
             {/* Right Column: Recent Functions & GitHub Repos */}
-            <div className="md:col-span-7">
+            <div className="md:col-span-5">
               <h2 className="mb-4 text-xl font-medium">Recent Functions</h2>
 
               <div className="flex flex-col gap-4">

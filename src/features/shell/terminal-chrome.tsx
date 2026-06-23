@@ -8,7 +8,7 @@ export function TerminalChrome({ children }: { children: React.ReactNode }) {
     <div className="flex h-dvh flex-col bg-background">
       <StatusBar />
       <FavBar />
-      {children}
+      <div className="flex-1 min-h-0">{children}</div>
     </div>
   )
 }

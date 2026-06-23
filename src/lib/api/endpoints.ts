@@ -82,4 +82,5 @@ export const API = {
   shortSellTurnover: "/hkex/short-sell-turnover",
   status: "/status",
   sfcSearch: "/sfc/search",
+  letf: "/letf",
 } as const

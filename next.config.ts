@@ -17,9 +17,9 @@ const nextConfig: NextConfig = {
   ],
 
   // Disable minification for Turbopack
-  experimental: {
-    turbopackMinify: false,
-  },
+  // experimental: {
+  //   turbopackMinify: false,
+  // },
 };
 
 export default nextConfig;
