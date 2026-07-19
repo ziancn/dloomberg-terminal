@@ -1,5 +1,5 @@
 1:"$Sreact.fragment"
-2:I[78602,["/dloomberg-terminal/_next/static/chunks/03h8rwbjf741-.js","/dloomberg-terminal/_next/static/chunks/15r7i4p5.goax.js","/dloomberg-terminal/_next/static/chunks/04j.klqmhgzwh.js","/dloomberg-terminal/_next/static/chunks/0o5m-av_xor9h.js","/dloomberg-terminal/_next/static/chunks/0-i-kl6hi.3...js","/dloomberg-terminal/_next/static/chunks/08j4dtktnzatg.js"],"OutletBoundary"]
+2:I[78602,["/dloomberg-terminal/_next/static/chunks/00zai2f9o~hz2.js","/dloomberg-terminal/_next/static/chunks/0s62wl0.1u~_~.js","/dloomberg-terminal/_next/static/chunks/04j.klqmhgzwh.js","/dloomberg-terminal/_next/static/chunks/0thtjdu2_gs7n.js","/dloomberg-terminal/_next/static/chunks/0o5m-av_xor9h.js","/dloomberg-terminal/_next/static/chunks/0-i-kl6hi.3...js"],"OutletBoundary"]
 3:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"","children":["$","a",null,{"children":"Hi"}]}],null,["$","$L2",null,{"children":["$","$3",null,{"name":"Next.MetadataOutlet","children":"$@4"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"OlsplOs1AKCzMCg8N3YvE"}
+0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"","children":["$","a",null,{"children":"Hi"}]}],null,["$","$L2",null,{"children":["$","$3",null,{"name":"Next.MetadataOutlet","children":"$@4"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"eMDfhsAYW5zzb8_TXhP-q"}
 4:null
